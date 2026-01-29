@@ -6,7 +6,7 @@ import HeaderContent from '../Helper/HeaderContent';
 const founders = [
   {
     name: 'Dev Chand Patel',
-    role: 'Director',
+    role: 'Directo',
     image: 'https://images.unsplash.com/photo-1607746882042-944635dfe10e?q=80&w=500&auto=format&fit=crop',
     bio: 'The cornerstone of Rishabh Green’s journey, Dev Chand Patel brings decades of experience and vision. His leadership has shaped the brand’s enduring legacy of trust, quality, and innovation in the stone industry. ',
   },
