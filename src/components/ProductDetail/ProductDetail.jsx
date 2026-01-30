@@ -134,6 +134,15 @@ const ProductDetail = () => {
       "Timeless Elegance",
       "Suitable for Interior & Exterior Use",
     ],
+    new: [
+      "Premium Quality Natural Stone",
+      "Excellent Durability",
+      "Heat Resistant",
+      "Stain Resistant with Proper Sealing",
+      "Easy to Maintain",
+      "Timeless Elegance",
+      "Suitable for Interior & Exterior Use",
+    ],
   };
 
   const nextImage = () => {

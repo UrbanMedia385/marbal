@@ -63,7 +63,7 @@ const Hero = () => {
   const headlineWords = "Rishabh Green Marbles ".split(" ");
   const companyWords = "Premium, from core to craft ".split(" ");
   const subheadingWords =
-    "Redefining luxury since 1990 with the finest marbles, sandstones, and granites. Gleaned from prime quarries, sculpted with precision, and polished to perfection. Each stone is carved to endure, elevate your spaces, and inspire timeless elegance to worldwide standards. ".split(
+    "Redefining luxury since 1995 with the finest marbles, sandstones, and granites. Gleaned from prime quarries, sculpted with precision, and polished to perfection. Each stone is carved to endure, elevate your spaces, and inspire timeless elegance to worldwide standards. ".split(
       " "
     );
 

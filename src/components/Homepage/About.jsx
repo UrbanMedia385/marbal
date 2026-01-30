@@ -162,7 +162,7 @@ const About = () => {
                   }`}
                 style={{ fontFamily: 'Montserrat', fontWeight: '300', letterSpacing: '0.02em', lineHeight: '1.6' }}
               >
-                Rishabh Green Marbles transforms nature's artistry into timeless beauty. With more than 25 years in the business, we specialize in Indian and imported granite, marble, sandstone, and slate with over 100 beautiful choices. Our stones are produced with Italian technology, striving for precision, quality, and durability.
+                Rishabh Green Marbles transforms nature's artistry into timeless beauty. With more than 50+ years in the business, we specialize in Indian and imported granite, marble, sandstone, and slate with over 100 beautiful choices. Our stones are produced with Italian technology, striving for precision, quality, and durability.
               </p>
               <p
                 className={`text-sm sm:text-base md:text-lg leading-relaxed mb-4 sm:mb-6 ${theme === "dark" ? "text-gray-300" : "text-gray-700"
