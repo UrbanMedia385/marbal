@@ -93,16 +93,16 @@ const Footer = () => {
           {/* Products */}
           <div className="md:col-span-2">
             <h3 className="text-lg font-semibold mb-6 relative pb-2 after:absolute after:left-0 after:bottom-0 after:w-10 after:h-0.5 after:bg-[#F2E1C5]" style={{ fontFamily: 'Montserrat', fontWeight: '200', letterSpacing: '0.1em' }}>
-              Products
+            Catagory 
             </h3>
             <ul className="space-y-4 mx-[-20px]"            style={{ fontFamily: 'Montserrat', fontWeight: '200', letterSpacing: '0.1em' }}>
 
               {[
-                { label: "Green Marble", to: "/products/green-marble" },
-                { label: "White Marble", to: "/products/white-marble" },
+                { label: "Green ", to: "/products/green-marble" },
+                { label: "White ", to: "/products/white-marble" },
                 { label: "Granite", to: "/products/granite" },
-                { label: "Sandstone", to: "/products/sandstone" },
-                { label: "Custom Designs", to: "/products/custom-designs" },
+                { label: "Sandstone", to: "/products/sandstone" }
+               
               ].map((item, index) => (
                 <li key={index}>
                   <p

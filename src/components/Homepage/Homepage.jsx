@@ -1,10 +1,12 @@
 import React, { Suspense, lazy } from "react";
 import WorldMap from "./WorldMap";
+import SisterCompany from "../Helper/SisterCompany"; // Import SisterCompany
 
 // Lazy load components
 const Hero = lazy(() => import("./Hero"));
 const About = lazy(() => import("./About"));
 const CategorySelector = lazy(() => import("./CategorySelector"));
+const NaturalStoneTiles = lazy(() => import("./NaturalStoneTiles"));
 const FeaturedCollections = lazy(() => import("./OurCraft"));
 const Productcollection = lazy(() => import("./Productcollection"));
 const Application = lazy(() => import("./Application"));
@@ -42,6 +44,13 @@ const Homepage = () => {
       <Suspense fallback={<div>Loading Cutting Process...</div>}>
         <CuttingProcessSection />
       </Suspense>
+
+      <Suspense fallback={<div>Loading Cutting Process...</div>}>
+        <NaturalStoneTiles />
+      </Suspense>
+
+      {/* Add SisterCompany slider here */}
+      <SisterCompany />
 
       {/* <Suspense fallback={<div>Loading Testimonials...</div>}>
         <Testimonials />

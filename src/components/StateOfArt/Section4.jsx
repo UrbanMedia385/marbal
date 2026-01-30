@@ -40,7 +40,7 @@ return (
                     {[
                         { value: '25+', label: 'Years of Mastery', suffix: 'Years' },
                         { value: '15', label: 'Advanced Machinery', suffix: 'Machines' },
-                        { value: '0.1', label: 'Cutting Precision', suffix: 'mm Tolerance' },
+                        { value: '10', label: 'Cutting Precision', suffix: 'mm Tolerance' },
                         { value: '98', label: 'Client Satisfaction', suffix: '% Rating' }
                     ].map((stat, index) => (
                         <motion.div

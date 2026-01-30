@@ -76,15 +76,15 @@ const Navbar = () => {
           : "bg-gradient-to-b from-gray-900 to-gray-850 py-2 border-b border-gray-700/30"
         }`}
     >
-      <div className="max-w-7xl mx-auto px-3 sm:px-4 md:px-6">
-        <div className="flex justify-between items-center h-14 sm:h-16">
+      <div className="max-w-8xl mx-auto px-3 sm:px-2 md:px-32">
+        <div className="flex justify-between items-center h-20 sm:h-20">
           {/* Logo */}
           <div className="flex items-center flex-shrink-0">
             <Link to="/" className="inline-flex items-center">
               <img
                 src={logo}
                 alt="RGM"
-                className="h-18 w-18 sm:h-10 sm:w-10 md:h-19 md:w-25   object-contain"
+                className="h-25 w-25 sm:h-25 sm:w-25 md:h-50 md:w-55   object-contain"
               />
             </Link>
           </div>
