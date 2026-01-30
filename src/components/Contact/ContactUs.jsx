@@ -137,7 +137,7 @@ const ContactUs = () => {
                 },
                 {
                   icon: FaMapMarkerAlt,
-                  title: "Showroom",
+                  title: " Office Address",
                   content: "Araji No. 114, NH. 8",
                   subtext: "Sukher, Udaipur – 313001, Rajasthan, IND",
                   color: "from-[#0E5543] to-[#1A7A62]"
@@ -301,10 +301,10 @@ const ContactUs = () => {
         >
           <div className="text-center mb-12">
             <h2 className="text-3xl sm:text-4xl font-light mb-4 text-[#F2E1C5]">
-              Visit Our <span className="text-[#F2E1C5]">Showroom</span>
+              Visit Our <span className="text-[#F2E1C5]">Office Address</span>
             </h2>
             <p className="text-[#F2E1C5]/70 text-lg max-w-2xl mx-auto">
-              Experience our premium ceramic collections in person at our luxurious showroom
+              Experience our premium ceramic collections in person at our luxurious Office Address
             </p>
           </div>
 

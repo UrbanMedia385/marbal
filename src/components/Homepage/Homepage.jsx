@@ -6,7 +6,7 @@ import SisterCompany from "../Helper/SisterCompany"; // Import SisterCompany
 const Hero = lazy(() => import("./Hero"));
 const About = lazy(() => import("./About"));
 const CategorySelector = lazy(() => import("./CategorySelector"));
-const NaturalStoneTiles = lazy(() => import("./NaturalStoneTiles"));
+const NaturalStoneTilesInfo = lazy(() => import("./NaturalStoneTilesInfo"));
 const FeaturedCollections = lazy(() => import("./OurCraft"));
 const Productcollection = lazy(() => import("./Productcollection"));
 const Application = lazy(() => import("./Application"));
@@ -46,7 +46,7 @@ const Homepage = () => {
       </Suspense>
 
       <Suspense fallback={<div>Loading Cutting Process...</div>}>
-        <NaturalStoneTiles />
+        <NaturalStoneTilesInfo />
       </Suspense>
 
       {/* Add SisterCompany slider here */}
