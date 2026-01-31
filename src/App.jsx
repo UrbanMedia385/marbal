@@ -1,5 +1,5 @@
 // App.js (Main Component)
-import React, { useState } from "react";
+import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 import Navbar from "./components/Helper/Navbar";
@@ -25,18 +25,15 @@ import Europe from "./components/Exporters/Europe";
 import ProductDetail from "./components/ProductDetail/ProductDetail.jsx";
 import RequestQuote from "./components/Quote/RequestQuote";
 
+// FIX: Correct Import Path
+import TilesProduction from "./components/Homepage/TilesProduction"; 
+
 function App() {
-
-
-
   return (
     <Router>
-
       <div className=" ">
         <ScrollToTop />
-
         <Navbar />
-
         <Routes>
           <Route path="/" element={<Homepage />} />
           <Route path="/contact" element={<ContactUs />} />
@@ -50,16 +47,15 @@ function App() {
           <Route path="/marble" element={<Marble />} />
           <Route path="/granite" element={<Granite />} />
           <Route path="/sandstone" element={<Sandstone />} />
-          {/* <Route path="/help" element={<HelpandAddvaice />} /> */}
           <Route path="/blogs" element={<BlogsPage />} />
           <Route path="/exporters" element={<Exporters />} />
           <Route path="/exporters/uae" element={<UAE />} />
           <Route path="/exporters/qatar" element={<Qatar />} />
           <Route path="/exporters/saudi-arabia" element={<SaudiArabia />} />
           <Route path="/exporters/europe" element={<Europe />} />
-
-
-
+          
+          {/* Route path is correct (small letters) */}
+          <Route path="/tiles-production" element={<TilesProduction />} />
 
           {/* Catch-All 404 Route */}
           <Route path="*" element={<NotFoundPage />} />
