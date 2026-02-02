@@ -3,6 +3,7 @@ import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
 import { useNavigate } from "react-router-dom";
 
 // Import sample images (keep your existing imports)
+
 import agariaWhite from "../../assets/marbles/Agaria-White-Marble[1].jpg";
 import aravaliGreen from "../../assets/marbles/Aravali-Green[1].jpg";
 import bidasarBrown from "../../assets/marbles/bidasar brown marble.jpg";
