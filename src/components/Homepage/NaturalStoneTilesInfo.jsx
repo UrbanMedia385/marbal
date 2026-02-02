@@ -21,9 +21,9 @@ const NaturalStoneTilesInfo = () => {
             From luxurious residences to iconic commercial spaces, our tiles
             bring natural charm and enduring performance to every project.
           </p>
-          <button className="px-8 py-3 bg-white text-green-900 font-semibold rounded-lg shadow-lg hover:bg-gray-200 transition">
+          <a href="tiles-production" className="px-8 py-3 bg-white text-green-900 font-semibold rounded-lg shadow-lg hover:bg-gray-200 transition">
             About More
-          </button>
+          </a>
         </div>
 
         {/* Right Images */}
