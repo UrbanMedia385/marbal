@@ -25,6 +25,7 @@ import AutomatedTilingImage from "../../assets/marbles/Automated Tiling & Finish
 import blockCuttingImg from "../../assets/block-cutting-image.avif";
 import calibrationImg from "../../assets/tiles-Calibration.jpg";
 import grindingImg from "../../assets/tiles-Grinding.webp"; 
+import polishing  from "../../assets/polishing.jpg"; 
 import groovingImg from "../../assets/Grooving.avif";
 import chamferingImg from "../../assets/Chamfering.jpg";
 import finalFinishingImg from "../../assets/Final Finishing.webp";
