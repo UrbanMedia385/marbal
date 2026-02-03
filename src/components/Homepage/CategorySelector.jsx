@@ -3,7 +3,7 @@ import { motion, useMotionValue, useTransform, animate } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
 import HeaderContent from "../Helper/HeaderContent";
-import SurataGreen  from "../../assets/home_img/DARK (SURATA) GREEN.png";
+import SurataGreen  from "../../assets/home_img/SURATA-GREEN.png";
 import ForestGreen from "../../assets/home_img/FOREST GREEN.png";
 import rGreen from "../../assets/home_img/rGreen.png";
 import SPIDERGreen from "../../assets/home_img/SPIDER GREEN.png";
@@ -12,7 +12,7 @@ const categories = [
   { 
     id: 17,
     name: "Surata Green",
-    image : "https://everwallpaper.com/cdn/shop/files/dark-green-marble-hallway-mural-wallpaper_4a24f584-357c-4534-81d9-b1ce275f526e.jpg?v=1732537204&width=416",
+    image : SurataGreen,
     description:
       "Choose the shade of distinction, crafted for those who value rarity.",
     color: "from-amber-900/30 to-amber-700/20",
