@@ -14,39 +14,24 @@ import {
   FaArrowRight
 } from "react-icons/fa";
 
-// --- EXISTING IMAGES ---
+// YEHI SIRF 7 IMAGES RAKHI HAIN (BAKI SAB DELETE KAR DIYA)
+import heroImage from "../../assets/banner image.webp";
 import tilesAboutImg from "../../assets/tiles-aboutus-image.webp";
-import bannerImage from "../../assets/banner image.webp"; 
 
 import MultiDiscImage from "../../assets/marbles/Multi Disc Block Cutter.webp";
 import AutomatedTilingImage from "../../assets/marbles/Automated Tiling & Finishing.jpg";
 
-// --- NEW PROCESS IMAGES IMPORT ---
 import blockCuttingImg from "../../assets/block-cutting-image.avif";
 import calibrationImg from "../../assets/tiles-Calibration.jpg";
 import grindingImg from "../../assets/tiles-Grinding.webp"; 
 import polishing  from "../../assets/polishing.jpg"; 
-import groovingImg from "../../assets/Grooving.avif";
-import chamferingImg from "../../assets/Chamfering.jpg";
-import finalFinishingImg from "../../assets/Final Finishing.webp";
-import { useNavigate } from "react-router-dom";
 
-// --- GREEN MARBLE TILE IMAGES ---
-import SurataGreen from "../../assets/home_img/DARK (SURATA) GREEN.png";
-import ForestGreen from "../../assets/home_img/FOREST GREEN.png";
-import rGreen from "../../assets/home_img/rGreen.png";
-import SPIDERGreen from "../../assets/home_img/SPIDER GREEN.png";
-
-// --- TUMHARI DIYI HUI 4 NAYI IMAGES ---
+// 4 Premium Tiles (tumhari nayi images)
 import IconicGold from "../../assets/marbles/iconic-gold-marble-slabs-985059-1-B.jpeg.jpg";
 import IndianSupplier from "../../assets/marbles/Indian-Marble-Supplier[1].jpg";
 import IstockMarble from "../../assets/marbles/istockphoto-1134258949-612x612.jpg";
 import KatniBeige from "../../assets/marbles/katni-beige-marble-500x500[1].jpg";
 
-// Set Hero Image
-const heroImage = bannerImage;
-
-// Data: Why Stand Apart
 const features = [
   { icon: <FaRulerCombined />, title: "Precision 10mm Thickness" },
   { icon: <FaCogs />, title: "Italian Pedrini Technology" },
@@ -54,29 +39,22 @@ const features = [
   { icon: <FaGem />, title: "Timeless Elegance & Strength" },
 ];
 
-// Data: Manufacturing Process
 const processSteps = [
   { id: "01", title: "Block Cutting", subtitle: "Multidisc Cutter", description: "10 mm tiles are cut from selected marble blocks using a specialized Multidisc Block cutter to ensure uniform slices right from the start.", img: blockCuttingImg },
   { id: "02", title: "Calibration", subtitle: "Thickness Adjustment", description: "Thickness is precisely adjusted to make each tile exactly the same, ensuring they are perfectly flat and easy to install.", img: calibrationImg },
   { id: "03", title: "Grinding", subtitle: "Surface Leveling", description: "Grinding removes irregularities on the surface of the tiles, allowing for superior stability and structural strength.", img: grindingImg },
   { id: "04", title: "Polishing", subtitle: "Gloss Enhancement", description: "High-grade gloss is added to enhance the look of the stone's natural patterns, bringing out the vibrant green hues.", img: polishing },
-  { id: "05", title: "Grooving", subtitle: "Structuring", description: "Grooving helps to add structure to the tile, ensuring better adhesion and use in various architectural applications.", img: groovingImg },
-  { id: "06", title: "Chamfering", subtitle: "Edge Finishing", description: "Chamfering is when the edges on the tile are shaved to give it a precise 0.1 mm finish, ensuring seamless joints.", img: chamferingImg },
-  { id: "07", title: "Final Finishing", subtitle: "Quality Assurance", description: "The tiles are cut, brushed, cleaned, and then sorted into quality categories for strict quality assurance before packing.", img: finalFinishingImg }
 ];
 
-// 8 TILES WITH YOUR NEW IMAGES
 const tileCategories = [
-
   { id: 21, name: "Iconic Gold", image: IconicGold },
   { id: 22, name: "Indian Beige", image: IndianSupplier },
   { id: 23, name: "Premium White", image: IstockMarble },
   { id: 24, name: "Katni Beige", image: KatniBeige },
 ];
 
-// Data: Applications
 const applications = [
-  { id: 1, title: "Multi Disc Block Cutte", description: "The manufacturing process of green marble tiles starts by cutting the marble blocks with a Multi Disc Block Cutter that is manufactured by Pedrini, an Italian company that offers great precision while cutting thin green marble tiles (10mm thick). ", icon: <FaHome />, img: "assets\\marbles\\malti disc block cotter image.jpg" },
+  { id: 1, title: "Multi Disc Block Cutter", description: "The manufacturing process of green marble tiles starts by cutting the marble blocks with a Multi Disc Block Cutter that is manufactured by Pedrini, an Italian company that offers great precision while cutting thin green marble tiles (10mm thick). ", icon: <FaHome />, img: "assets\\marbles\\malti disc block cotter image.jpg" },
   { id: 2, title: "Iconic Commercial Spaces", description: "Durable elegance for high-traffic areas.", icon: <FaBuilding />, img: "https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=1000&auto=format&fit=crop" },
   { id: 3, title: "Luxury Hotels", description: "Grand lobbies and premium finishes.", icon: <FaHotel />, img: "https://images.unsplash.com/photo-1590381105924-c72589b9ef3f?q=80&w=1000&auto=format&fit=crop" },
   { id: 4, title: "International Markets", description: "Exported to Dubai, Europe, and Kuwait.", icon: <FaLayerGroup />, img: "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?q=80&w=1000&auto=format&fit=crop" }
@@ -88,7 +66,7 @@ const TilesProduction = () => {
   return (
     <div className="min-h-screen bg-white font-sans overflow-x-hidden">
       
-      {/* ================= 1. BANNER SECTION (Dark & Cinematic) ================= */}
+      {/* 1. BANNER SECTION (Dark & Cinematic) */}
       <div className="relative h-screen w-full overflow-hidden flex items-center justify-center bg-black">
         <div className="absolute inset-0 z-0">
           <motion.img 
@@ -127,7 +105,7 @@ const TilesProduction = () => {
         </motion.div>
       </div>
 
-      {/* ================= 2. INTRO / WHY STAND APART ================= */}
+      {/* 2. INTRO / WHY STAND APART */}
       <div className="bg-white py-24 px-6 md:px-12 border-b border-gray-100">
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <motion.div 
@@ -178,7 +156,7 @@ const TilesProduction = () => {
         </div>
       </div>
 
-      {/* ================= 3. MANUFACTURING PROCESS (ZIG-ZAG) ================= */}
+      {/* 3. MANUFACTURING PROCESS (ZIG-ZAG) */}
       <div className="bg-gray-50 py-24 px-6 relative overflow-hidden">
         <div className="absolute inset-0 opacity-[0.03]" style={{backgroundImage: 'radial-gradient(#0E5543 1px, transparent 1px)', backgroundSize: '24px 24px'}}></div>
 
@@ -231,8 +209,8 @@ const TilesProduction = () => {
         </div>
       </div>
 
- {/* ================= OUR PREMIUM MARBLE TILES (ONLY 4 NEW ONES) ================= */}
- <section className="py-24 bg-gradient-to-b from-gray-50 to-white">
+      {/* OUR PREMIUM MARBLE TILES (ONLY 4 NEW ONES) */}
+      <section className="py-24 bg-gradient-to-b from-gray-50 to-white">
         <div className="max-w-7xl mx-auto px-6 text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-serif text-gray-900 mb-6">
             Our Exclusive <span className="text-[#0E5543]">Premium Collection</span>
@@ -242,7 +220,6 @@ const TilesProduction = () => {
           </p>
         </div>
 
-        {/* Desktop Grid - Only 4 Premium Tiles */}
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 max-w-7xl mx-auto px-6">
           {tileCategories.map((tile, i) => (
             <motion.div
@@ -263,7 +240,6 @@ const TilesProduction = () => {
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end p-8">
                 <div className="transform translate-y-8 group-hover:translate-y-0 transition-transform duration-500">
                   <h3 className="text-3xl font-serif text-white mb-4">{tile.name}</h3>
-                 
                 </div>
               </div>
             </motion.div>
@@ -271,17 +247,17 @@ const TilesProduction = () => {
         </div>
 
         <div className="text-center mt-16">
-  <a 
-    href="/OurStones"
-    className="inline-block bg-[#0E5543] text-white px-14 py-5 rounded-full text-lg font-bold hover:bg-[#0c4a3a] transition shadow-2xl transform hover:scale-105 duration-300"
-  >
-    Explore Full Collection →
-  </a>
-</div>
+          <a 
+            href="/OurStones"
+            className="inline-block bg-[#0E5543] text-white px-14 py-5 rounded-full text-lg font-bold hover:bg-[#0c4a3a] transition shadow-2xl transform hover:scale-105 duration-300"
+          >
+            Explore Full Collection →
+          </a>
+        </div>
       </section>
 
-          {/* ================= TECHNOLOGY SECTION WITH YOUR REAL IMAGES ================= */}
-          <section className="py-16 md:py-24 bg-gradient-to-b from-gray-50 via-white to-gray-50">
+      {/* TECHNOLOGY SECTION WITH REAL IMAGES */}
+      <section className="py-16 md:py-24 bg-gradient-to-b from-gray-50 via-white to-gray-50">
         <div className="max-w-7xl mx-auto px-6 md:px-8">
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
@@ -301,14 +277,9 @@ const TilesProduction = () => {
             </p>
           </motion.div>
 
-          {/* Multi Disc Block Cutter - YOUR REAL IMAGE */}
+          {/* Multi Disc Block Cutter */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 md:gap-16 items-center mb-16 md:mb-24">
-            <motion.div
-              initial={{ opacity: 0, x: -40 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              className="order-2 lg:order-1"
-            >
+            <motion.div initial={{ opacity: 0, x: -40 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} className="order-2 lg:order-1">
               <div className="relative group">
                 <div className="absolute -inset-1 bg-gradient-to-r from-[#0E5543] to-[#0c4a3a] rounded-3xl blur opacity-25 group-hover:opacity-50 transition duration-1000"></div>
                 <img 
@@ -322,12 +293,7 @@ const TilesProduction = () => {
               </div>
             </motion.div>
 
-            <motion.div
-              initial={{ opacity: 0, x: 40 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              className="order-1 lg:order-2 space-y-5 md:space-y-6"
-            >
+            <motion.div initial={{ opacity: 0, x: 40 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} className="order-1 lg:order-2 space-y-5 md:space-y-6">
               <div className="flex items-start gap-3 md:gap-4">
                 <div className="w-2 h-2 md:w-3 md:h-3 bg-[#0E5543] rounded-full mt-2 flex-shrink-0"></div>
                 <h3 className="text-2xl md:text-3xl lg:text-4xl font-serif text-gray-900 leading-tight">
@@ -339,22 +305,12 @@ const TilesProduction = () => {
                 Green marble blocks are cut using a <strong>Pedrini Multi Disc Block Cutter</strong>, an advanced Italian machine known for its high precision. 
                 It allows us to produce uniform 10mm thin slabs with clean edges and minimal material loss, ensuring a strong foundation for premium-quality tiles.
               </p>
-              <div className="flex flex-wrap gap-3 md:gap-4 text-xs md:text-sm text-gray-600">
-                <span className="flex items-center gap-2"><span className="text-[#0E5543] text-lg">✓</span> Italian Engineering</span>
-                <span className="flex items-center gap-2"><span className="text-[#0E5543] text-lg">✓</span> 0.1mm Precision</span>
-                <span className="flex items-center gap-2"><span className="text-[#0E5543] text-lg">✓</span> Minimal Wastage</span>
-              </div>
             </motion.div>
           </div>
 
-          {/* Automated Tiling & Finishing - YOUR REAL IMAGE */}
+          {/* Automated Tiling & Finishing */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 md:gap-16 items-center">
-            <motion.div
-              initial={{ opacity: 0, x: -40 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              className="space-y-5 md:space-y-6"
-            >
+            <motion.div initial={{ opacity: 0, x: -40 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} className="space-y-5 md:space-y-6">
               <div className="flex items-start gap-3 md:gap-4">
                 <div className="w-2 h-2 md:w-3 md:h-3 bg-[#0E5543] rounded-full mt-2 flex-shrink-0"></div>
                 <h3 className="text-2xl md:text-3xl lg:text-4xl font-serif text-gray-900 leading-tight">
@@ -365,19 +321,9 @@ const TilesProduction = () => {
                 The cut slabs are processed in our <strong>automated tiling facility</strong>, where advanced machinery handles calibration, grinding, polishing, chamfering, grooving, and finishing. 
                 This ensures consistent quality, precise profiling, and a flawless finish across every green marble tile.
               </p>
-              <div className="flex flex-wrap gap-3 md:gap-4 text-xs md:text-sm text-gray-600">
-                <span className="flex items-center gap-2"><span className="text-[#0E5543] text-lg">✓</span> Full Automation</span>
-                <span className="flex items-center gap-2"><span className="text-[#0E5543] text-lg">✓</span> Zero Human Error</span>
-                <span className="flex items-center gap-2"><span className="text-[#0E5543] text-lg">✓</span> Export-Grade Finish</span>
-              </div>
             </motion.div>
 
-            <motion.div
-              initial={{ opacity: 0, x: 40 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              className="text-center"
-            >
+            <motion.div initial={{ opacity: 0, x: 40 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} className="text-center">
               <div className="relative group">
                 <div className="absolute -inset-1 bg-gradient-to-r from-[#0E5543] to-[#0c4a3a] rounded-3xl blur opacity-25 group-hover:opacity-50 transition duration-1000"></div>
                 <img 
@@ -394,16 +340,10 @@ const TilesProduction = () => {
         </div>
       </section>
 
-
-          
-
-      {/* ================= 8. CTA / FOOTER ================= */}
+      {/* CTA / FOOTER */}
       <div className="bg-white py-24 px-4 sm:px-6">
         <div className="max-w-7xl mx-auto">
           <div className="relative bg-[#0E5543] rounded-[3rem] overflow-hidden shadow-2xl p-8 md:p-16 flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
-            <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-white opacity-5 rounded-full blur-[100px] pointer-events-none -translate-y-1/2 translate-x-1/2"></div>
-            <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-black opacity-20 rounded-full blur-[80px] pointer-events-none translate-y-1/2 -translate-x-1/2"></div>
-
             <div className="flex-1 text-center lg:text-left relative z-10">
               <motion.span 
                 initial={{ opacity: 0, y: 20 }}
@@ -430,17 +370,6 @@ const TilesProduction = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.2 }}
                 viewport={{ once: true }}
-                className="text-gray-200 text-lg leading-relaxed max-w-xl mx-auto lg:mx-0 font-light"
-              >
-               Our tiles are trusted by architects, developers, and buyers seeking premium stone solutions. RGM supplies green marble tiles to international markets, including Dubai, Europe, and Kuwait
-              </motion.p>
-
-
-              <motion.p 
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.2 }}
-                viewport={{ once: true }}
                 className="text-gray-200 text-lg leading-relaxed mb-10 max-w-xl mx-auto lg:mx-0 font-light"
               >
                 Looking to source precision-crafted marble tiles for your next project? 
@@ -457,7 +386,6 @@ const TilesProduction = () => {
                 <a href="/contact" className="bg-white text-[#0E5543] px-10 py-4 rounded-full font-bold shadow-lg hover:bg-gray-100 transition-all transform hover:-translate-y-1 flex items-center justify-center gap-3">
                   Connect with Us <FaArrowRight />
                 </a>
-                
               </motion.div>
             </div>
 
@@ -474,19 +402,7 @@ const TilesProduction = () => {
                   alt="Luxury Interior" 
                   className="w-full h-[400px] object-cover"
                 />
-                <div className="absolute bottom-6 right-6 bg-white/90 backdrop-blur-md p-4 rounded-xl shadow-lg">
-                  <div className="flex items-center gap-3">
-                    <div className="bg-[#0E5543] p-2 rounded-full text-white">
-                      <FaGem />
-                    </div>
-                    <div>
-                      <p className="text-xs text-gray-500 font-bold uppercase">Premium Grade</p>
-                      <p className="text-[#0E5543] font-bold">100% Export Quality</p>
-                    </div>
-                  </div>
-                </div>
               </motion.div>
-              <div className="absolute -top-10 -right-10 w-32 h-32 bg-[#C76E00] rounded-full opacity-20 blur-2xl"></div>
             </div>
           </div>
         </div>
