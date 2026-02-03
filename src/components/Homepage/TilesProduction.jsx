@@ -24,7 +24,7 @@ import AutomatedTilingImage from "../../assets/marbles/Automated Tiling & Finish
 import blockCuttingImg from "../../assets/block-cutting-image.avif";
 import calibrationImg from "../../assets/tiles-Calibration.jpg";
 import grindingImg from "../../assets/tiles-Grinding.webp"; 
-import polishing  from "../../assets/polishing.jpg"; 
+import polishing  from "../../assets/Polishing.jpg"; 
 
 // 4 Premium Tiles (tumhari nayi images)
 import IconicGold from "../../assets/marbles/iconic-gold-marble-slabs-985059-1-B.jpeg.jpg";
