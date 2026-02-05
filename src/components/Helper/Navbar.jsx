@@ -84,7 +84,7 @@ const Navbar = () => {
               <img
                 src={logo}
                 alt="RGM"
-                className="h-25 w-25 sm:h-25 sm:w-25 md:h-50 md:w-55   object-contain"
+                className="h-28 w-28 sm:h-30 sm:w-30 md:h-32 md:w-32 object-contain"
               />
             </Link>
           </div>
