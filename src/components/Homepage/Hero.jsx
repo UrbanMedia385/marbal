@@ -79,9 +79,7 @@ const Hero = () => {
           poster="https://www.surreymarbleandgranite.co.uk/wp-content/uploads/2023/01/hero-01.jpg"
           className="absolute inset-0 w-full h-full object-cover"
         >
-          <source src="/hero.mp4" type="video/mp4" />
-          <source src="/hero.webm" type="video/webm" />
-          <source src="/hero.mov" type="video/quicktime" />
+          <source src="/RGM-Banner.mp4" type="video/mp4" />
         </video>
 
         {/* Gradient Overlay */}
