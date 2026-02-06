@@ -3,7 +3,6 @@ import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
 import { useNavigate } from "react-router-dom";
 
 // Import sample images (keep your existing imports)
-import mainBanner  from "../../assets/marbles/stone-page.webp";
 import agariaWhite from "../../assets/marbles/Agaria-White-Marble[1].jpg";
 import aravaliGreen from "../../assets/marbles/Aravali-Green[1].jpg";
 import bidasarBrown from "../../assets/marbles/bidasar brown marble.jpg";
@@ -651,33 +650,42 @@ export default function OurStones() {
 
   return (
     <div className="min-h-screen bg-gray-50">
-      <div className="max-w-full mx-auto px-4 sm:px-6 lg:px-8 py-20">
-        {/* Header Section */}
-        <div className="w-full mt-16 md:mt-2 lg:mt-2">   {/* ← Yeh top margin perfect hai */}
-    <div className="relative w-full h-96 overflow-hidden">
-      <img
-        src={mainBanner}
-        alt="Our Premium Stones Collection"
-        className="w-full h-full object-cover object-center"
-        loading="lazy"
-      />
-      
-      {/* Dark overlay (recommended for premium look) */}
-      <div className="absolute inset-0 bg-black/40"></div>
-      
-      {/* Optional Text on Banner (uncomment agar chahiye) */}
-      {/*
-      <div className="absolute inset-0 flex flex-col items-center justify-center text-center text-white px-6">
-        <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-4 tracking-tight">
-          Our Premium Stones Collection
-        </h1>
-        <p className="text-lg md:text-2xl tracking-widest uppercase opacity-90">
-          Luxury Redefined in Every Slab
-        </p>
+      {/* Full Width Banner - Outside Container */}
+      <div className="relative w-full h-[500px] overflow-hidden mb-20">
+        <img
+          src="/src/assets/home_img/RGM banner.jpeg"
+          alt="Our Premium Stones Collection"
+          className="w-full h-full object-cover object-center"
+          loading="lazy"
+        />
       </div>
-      */}
-    </div>
-  </div>
+
+      {/* Content Container */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+        {/* Section Header */}
+        <div className="relative text-center mb-20">
+          <h2
+            className="text-2xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-[#0E5543] leading-tight w-full mb-4 mt-10"
+            style={{ fontFamily: "Arial, sans-serif", fontWeight: "200" }}
+          >
+            <span className="relative">Explore Our Range</span>
+          </h2>
+
+          {/* Decorative line */}
+          <div className="h-0.5 bg-gradient-to-r from-[#0E5543] via-[#F2E1C5] to-[#0E5543] mx-auto mb-4 sm:mb-5 md:mb-6 lg:mb-8 w-20" />
+
+          <p
+            className="text-sm tracking-[0.3em] uppercase text-[#0E5543]/90 leading-relaxed font-medium"
+            style={{
+              fontFamily: "Montserrat",
+              fontWeight: "500",
+              letterSpacing: "0.02em",
+            }}
+          >
+            Explore our exclusive range of premium stones, from exquisite
+            marbles and timeless limestones to elegant granites
+          </p>
+        </div>
 
         {/* Categories */}
         <div className="space-y-16">
