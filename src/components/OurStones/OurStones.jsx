@@ -18,6 +18,7 @@ import morchanaGold from "../../assets/marbles/morchana gold marble.jpg";
 import mysticGreen from "../../assets/marbles/Mystic-Green-Marble[1].jpg";
 import pinkAraveli from "../../assets/marbles/pink araveli.jpg";
 import pinkMarble from "../../assets/marbles/pink-marble[1].jpg";
+import bannerImage from "../../assets/home_img/RGM-banner.jpeg";
 import rossoLavante from "../../assets/marbles/rosso-lavante-italian-marble[1].jpg";
 import afyonWhite from "../../assets/marbles/Afyon-White-8_(1)[1].jpg";
 import indianMarbleSupplier from "../../assets/marbles/Indian-Marble-Supplier[1].jpg";
@@ -653,7 +654,7 @@ export default function OurStones() {
       {/* Full Width Banner - Outside Container */}
       <div className="relative w-full h-[500px] overflow-hidden mb-20">
         <img
-          src="/src/assets/home_img/RGM-banner.jpeg"
+          src={bannerImage}
           alt="Our Premium Stones Collection"
           className="w-full h-full object-cover object-center"
           loading="lazy"
