@@ -294,7 +294,7 @@ const product = {
           {/* Tab Navigation */}
           <div className="border-b border-gray-200">
             <nav className="flex space-x-2 sm:space-x-8 px-3 sm:px-8 overflow-x-auto">
-              {["overview", "specifications", "applications", "features"].map(
+              {["overview", "specifications", "applications", "features", "tiles"].map(
                 (tab) => (
                   <button
                     key={tab}
@@ -447,14 +447,44 @@ const product = {
                 </div>
               </div>
             )}
+
+            {activeTab === "tiles" && (
+              <div className="space-y-4 sm:space-y-6">
+                <h3 className="text-xl sm:text-2xl font-bold text-gray-900">
+                  Tiles
+                </h3>
+                <p className="text-gray-600 leading-relaxed text-sm sm:text-base">
+                  Rishabh Green Marbles is dedicated to producing premium tiles that stand out for their flawless finish, clean edges, and smooth, seamless surfaces.
+                </p>
+                <div className="mt-6">
+                  <h4 className="text-lg font-semibold text-gray-900 mb-4">
+                    Sizing Variations
+                  </h4>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                    <div className="bg-gray-50 p-4 rounded-lg text-center">
+                      <div className="text-2xl font-bold text-[#0E5543] mb-2">305 X 305</div>
+                      <div className="text-sm text-gray-600">cm</div>
+                    </div>
+                    <div className="bg-gray-50 p-4 rounded-lg text-center">
+                      <div className="text-2xl font-bold text-[#0E5543] mb-2">610 X 610</div>
+                      <div className="text-sm text-gray-600">cm</div>
+                    </div>
+                    <div className="bg-gray-50 p-4 rounded-lg text-center">
+                      <div className="text-2xl font-bold text-[#0E5543] mb-2">610 X 1220</div>
+                      <div className="text-sm text-gray-600">cm</div>
+                    </div>
+                    <div className="bg-gray-50 p-4 rounded-lg text-center">
+                      <div className="text-2xl font-bold text-[#0E5543] mb-2">610 X 1525</div>
+                      <div className="text-sm text-gray-600">cm</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            )}
           </div>
         </div>
 
         <div className="bg-white rounded-xl sm:rounded-2xl shadow-lg p-4 sm:p-8 mb-8 sm:mb-16">
-          {/* <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900 mb-4 sm:mb-6 text-center">
-            How <span className="text-[#0E5543]">Marble Looks</span> in Real
-            Life
-          </h2> */}
           <h2
             className="text-2xl text-center sm:text-2xl md:text-3xl lg:text-4xl font-bold text-[#0E5543] leading-tight w-full mb-4 mt-10"
             style={{ fontFamily: "Arial, sans-serif", fontWeight: "200" }}
@@ -468,55 +498,6 @@ const product = {
             See how our premium marble appears in actual installations and
             real-world applications
           </p>
-
-          {/* Mobile Carousel */}
-          <div className="sm:hidden">
-            {/* <div className="flex space-x-4 overflow-x-auto pb-4 scrollbar-hide">
-              {[
-                {
-                  src: "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
-                  alt: "Marble Kitchen Countertop",
-                  title: "Kitchen Countertops",
-                },
-                {
-                  src: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
-                  alt: "Marble Bathroom",
-                  title: "Bathroom Vanities",
-                },
-                {
-                  src: "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
-                  alt: "Marble Flooring",
-                  title: "Luxury Flooring",
-                },
-                {
-                  src: "https://images.unsplash.com/photo-1615971677499-5467cbab01c0?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
-                  alt: "Marble Wall Cladding",
-                  title: "Wall Cladding",
-                },
-                {
-                  src: "https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
-                  alt: "Marble Fireplace",
-                  title: "Fireplace Surrounds",
-                },
-                {
-                  src: "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
-                  alt: "Marble Staircase",
-                  title: "Elegant Staircases",
-                },
-              ].map((item, index) => (
-                <div
-                  key={index}
-                  className="flex-shrink-0 w-72 relative group overflow-hidden "
-                >
-                  <img
-                    src={item.src}
-                    alt={item.alt}
-                    className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-500"
-                  />
-                </div>
-              ))}
-            </div> */}
-          </div>
 
           {/* Desktop Grid */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-0">
@@ -667,43 +648,25 @@ const product = {
           </div>
         </div>
 
-        {/* How Marble Looks in Real Life */}
-
-        {/* Contact CTA */}
-        {/* <div className="bg-gradient-to-r from-[#0E5543] to-[#1A7A62] rounded-xl sm:rounded-2xl p-6 sm:p-8 text-white text-center">
-          <h2 className="text-xl sm:text-2xl md:text-3xl font-bold mb-3 sm:mb-4">Interested in This Product?</h2>
-          <p className="text-base sm:text-lg mb-4 sm:mb-6 opacity-90">Get a custom quote or request samples for your project</p>
-          <div className="flex flex-col sm:flex-row justify-center gap-3 sm:gap-4">
-            <button className="bg-white text-[#0E5543] px-6 sm:px-8 py-3 rounded-full font-semibold hover:bg-gray-100 hover:scale-105 transition-all duration-300" onClick={()=>navigate("/request-quote")}>
-              Request Quote
-            </button>
-            <button className="border border-white text-[#0E5543] px-6 sm:px-8 py-3 rounded-full font-semibold hover:bg-white hover:text-[#0E5543] hover:scale-105 transition-all duration-300"
-            onClick={()=>navigate("/contact")}>
-              Contact Us
-            </button>
-            
+        {/* Image Zoom Modal */}
+        {isZoomed && (
+          <div className="fixed inset-0 bg-black bg-opacity-90 z-50 flex items-center justify-center p-2 sm:p-4">
+            <div className="relative max-w-4xl max-h-full w-full">
+              <img
+                src={product.images[currentImageIndex]}
+                alt={product.name}
+                className="max-w-full max-h-full object-contain w-full"
+              />
+              <button
+                onClick={() => setIsZoomed(false)}
+                className="absolute top-2 sm:top-4 right-2 sm:right-4 bg-white text-black p-2 rounded-full hover:bg-gray-100 transition-colors text-sm sm:text-base"
+              >
+                ✕
+              </button>
+            </div>
           </div>
-        </div> */}
+        )}
       </div>
-
-      {/* Image Zoom Modal */}
-      {isZoomed && (
-        <div className="fixed inset-0 bg-black bg-opacity-90 z-50 flex items-center justify-center p-2 sm:p-4">
-          <div className="relative max-w-4xl max-h-full w-full">
-            <img
-              src={product.images[currentImageIndex]}
-              alt={product.name}
-              className="max-w-full max-h-full object-contain w-full"
-            />
-            <button
-              onClick={() => setIsZoomed(false)}
-              className="absolute top-2 sm:top-4 right-2 sm:right-4 bg-white text-black p-2 rounded-full hover:bg-gray-100 transition-colors text-sm sm:text-base"
-            >
-              ✕
-            </button>
-          </div>
-        </div>
-      )}
     </div>
   );
 };

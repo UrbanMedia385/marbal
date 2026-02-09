@@ -653,7 +653,7 @@ export default function OurStones() {
       {/* Full Width Banner - Outside Container */}
       <div className="relative w-full h-[500px] overflow-hidden mb-20">
         <img
-          src="/src/assets/home_img/RGM banner.jpeg"
+          src="/src/assets/home_img/RGM-banner.jpeg"
           alt="Our Premium Stones Collection"
           className="w-full h-full object-cover object-center"
           loading="lazy"
