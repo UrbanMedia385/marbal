@@ -10,7 +10,7 @@ const FlautCollection = () => {
         origin: "Heat & scratch resistant",
         type: "Easy to clean & maintain",
         category: "Available in multiple finishes",
-        image: "/kitchen.jpg",
+        image: "/galaxygranite.jpeg",
         productId: 30
       },
       secondaryProduct: {
@@ -30,7 +30,7 @@ const FlautCollection = () => {
         origin: "Natural texture & patterns",
         type: "Moisture resistant",
         category: "Easy installation",
-        image: "/bedroom.jpg",
+        image: "/jaisalmer.jpeg",
         productId: 69
       },
       secondaryProduct: {
@@ -50,7 +50,7 @@ const FlautCollection = () => {
         origin: "Weather resistant",
         type: "Anti-slip surface",
         category: "UV resistant colors",
-        image: "/furniture.jpg",
+        image: "/tanbrown.jpeg",
         productId: 61
       },
       secondaryProduct: {
