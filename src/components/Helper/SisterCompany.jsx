@@ -6,6 +6,7 @@ import "./SisterCompany.css";
 
 const SisterCompany = () => {
   const [isMobile, setIsMobile] = useState(false);
+  const [currentIndex, setCurrentIndex] = useState(0);
   
   useEffect(() => {
     const checkMobile = () => {
@@ -19,69 +20,18 @@ const SisterCompany = () => {
   }, []);
 
   const companyNames = ["ODA Industries", "Jewan Jyoti", "Rishabh Minerals"];
+  
+  const nextSlide = () => {
+    setCurrentIndex((prev) => (prev + 1) % companyNames.length);
+  };
+  
+  const prevSlide = () => {
+    setCurrentIndex((prev) => (prev - 1 + companyNames.length) % companyNames.length);
+  };
 
-  // Mobile: Simple carousel with manual controls
-  if (isMobile) {
-    const [currentIndex, setCurrentIndex] = useState(0);
-    
-    const nextSlide = () => {
-      setCurrentIndex((prev) => (prev + 1) % companyNames.length);
-    };
-    
-    const prevSlide = () => {
-      setCurrentIndex((prev) => (prev - 1 + companyNames.length) % companyNames.length);
-    };
-
-    return (
-      <section className="bg-[#F2E1C5] text-[#0E5543] py-12 sm:py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-8 sm:mb-12">
-            <h2
-              className="text-2xl sm:text-3xl font-bold mb-6"
-              style={{ fontFamily: "Montserrat", fontWeight: "200", letterSpacing: "0.1em" }}
-            >
-              Sister Company
-            </h2>
-          </div>
-          
-          {/* Mobile Carousel */}
-          <div className="mobile-sister-carousel">
-            <div className="mobile-carousel-container">
-              {companyNames.map((name, index) => (
-                <div 
-                  key={index} 
-                  className={`mobile-slide ${index === currentIndex ? 'active' : ''}`}
-                >
-                  <p className="sister-company-btn">
-                    {name}
-                  </p>
-                </div>
-              ))}
-            </div>
-            
-            {/* Mobile Controls */}
-            <div className="mobile-carousel-controls">
-              <button onClick={prevSlide} className="mobile-control-btn">
-                ←
-              </button>
-              <div className="mobile-dots">
-                {companyNames.map((_, index) => (
-                  <span 
-                    key={index} 
-                    className={`mobile-dot ${index === currentIndex ? 'active' : ''}`}
-                    onClick={() => setCurrentIndex(index)}
-                  />
-                ))}
-              </div>
-              <button onClick={nextSlide} className="mobile-control-btn">
-                →
-              </button>
-            </div>
-          </div>
-        </div>
-      </section>
-    );
-  }
+  const goToSlide = (index) => {
+    setCurrentIndex(index);
+  };
 
   // Desktop: Use react-slick
   const settings = {
@@ -107,19 +57,61 @@ const SisterCompany = () => {
           </h2>
         </div>
         
-        <div className="sister-company-slider">
-          <Slider {...settings}>
-            {companyNames.map((name, index) => (
-              <div key={index} className="sister-slide">
-                <div className="sister-slide-content">
-                  <p className="sister-company-btn">
-                    {name}
-                  </p>
-                </div>
+        {isMobile ? (
+          /* Mobile Carousel */
+          <div className="mobile-sister-carousel">
+            <div className="mobile-slide-container">
+              <div 
+                className="mobile-slide active"
+                style={{
+                  transform: `translateX(-${currentIndex * 100}%)`
+                }}
+              >
+                {companyNames.map((name, index) => (
+                  <div key={index} className="mobile-slide-item">
+                    <p className="sister-company-btn">
+                      {name}
+                    </p>
+                  </div>
+                ))}
               </div>
-            ))}
-          </Slider>
-        </div>
+            </div>
+            
+            {/* Mobile Controls */}
+            <div className="mobile-carousel-controls">
+              <button onClick={prevSlide} className="mobile-control-btn">
+                ←
+              </button>
+              <div className="mobile-dots">
+                {companyNames.map((_, index) => (
+                  <span 
+                    key={index} 
+                    className={`mobile-dot ${index === currentIndex ? 'active' : ''}`}
+                    onClick={() => goToSlide(index)}
+                  />
+                ))}
+              </div>
+              <button onClick={nextSlide} className="mobile-control-btn">
+                →
+              </button>
+            </div>
+          </div>
+        ) : (
+          /* Desktop Slider */
+          <div className="sister-company-slider">
+            <Slider {...settings}>
+              {companyNames.map((name, index) => (
+                <div key={index} className="sister-slide">
+                  <div className="sister-slide-content">
+                    <p className="sister-company-btn">
+                      {name}
+                    </p>
+                  </div>
+                </div>
+              ))}
+            </Slider>
+          </div>
+        )}
       </div>
     </section>
   );
