@@ -12,12 +12,14 @@ const SisterCompany = () => {
     slidesToScroll: 1,
     autoplay: true,
     autoplaySpeed: 3000,
+    arrows: false,
     responsive: [
       {
         breakpoint: 1024,
         settings: {
           slidesToShow: 2,
           slidesToScroll: 1,
+          arrows: false,
         },
       },
       {
@@ -26,7 +28,8 @@ const SisterCompany = () => {
           slidesToShow: 1,
           slidesToScroll: 1,
           centerMode: true,
-          centerPadding: '20px',
+          centerPadding: '30px',
+          arrows: false,
         },
       },
       {
@@ -35,7 +38,8 @@ const SisterCompany = () => {
           slidesToShow: 1,
           slidesToScroll: 1,
           centerMode: true,
-          centerPadding: '10px',
+          centerPadding: '15px',
+          arrows: false,
         },
       },
     ],
@@ -55,26 +59,13 @@ const SisterCompany = () => {
           </h2>
         </div>
         
-        {/* Slider container with proper mobile alignment */}
-        <div className="relative">
+        {/* Slider container */}
+        <div className="sister-company-slider">
           <Slider {...settings}>
             {companyNames.map((name, index) => (
-              <div key={index} className="flex justify-center items-center px-2 sm:px-4">
-                <div className="w-full max-w-xs mx-auto">
-                  <p
-                    className="text-base sm:text-lg font-semibold px-6 py-3 sm:px-8 sm:py-4 rounded-lg text-center mx-auto"
-                    style={{
-                      backgroundColor: "#0E5543",
-                      color: "#F2E1C5",
-                      fontFamily: "Montserrat",
-                      fontWeight: "200",
-                      letterSpacing: "0.1em",
-                      minHeight: "60px",
-                      display: "flex",
-                      alignItems: "center",
-                      justifyContent: "center",
-                    }}
-                  >
+              <div key={index} className="sister-slide">
+                <div className="sister-slide-content">
+                  <p className="sister-company-btn">
                     {name}
                   </p>
                 </div>
@@ -83,6 +74,108 @@ const SisterCompany = () => {
           </Slider>
         </div>
       </div>
+      
+      <style jsx>{`
+        .sister-company-slider .slick-slide {
+          display: flex !important;
+          justify-content: center !important;
+          align-items: center !important;
+          padding: 0 8px;
+        }
+        
+        .sister-company-slider .slick-slide > div {
+          display: flex !important;
+          justify-content: center !important;
+          align-items: center !important;
+          width: 100% !important;
+        }
+        
+        .sister-slide {
+          width: 100%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+        
+        .sister-slide-content {
+          width: 100%;
+          max-width: 280px;
+          display: flex;
+          justify-content: center;
+        }
+        
+        .sister-company-btn {
+          background-color: #0E5543;
+          color: #F2E1C5;
+          font-family: "Montserrat";
+          font-weight: 200;
+          letter-spacing: 0.1em;
+          font-size: 14px;
+          padding: 12px 24px;
+          border-radius: 8px;
+          text-align: center;
+          white-space: nowrap;
+          min-height: 50px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          transition: all 0.3s ease;
+          margin: 0 auto;
+        }
+        
+        .sister-company-btn:hover {
+          transform: scale(1.05);
+        }
+        
+        @media (max-width: 1023px) {
+          .sister-company-btn {
+            font-size: 13px;
+            padding: 10px 20px;
+            min-height: 45px;
+          }
+        }
+        
+        @media (max-width: 767px) {
+          .sister-company-slider .slick-slide {
+            padding: 0 5px;
+          }
+          
+          .sister-company-slider .slick-center .sister-company-btn {
+            transform: scale(1.08);
+            box-shadow: 0 4px 12px rgba(14, 85, 67, 0.3);
+          }
+          
+          .sister-company-btn {
+            font-size: 12px;
+            padding: 8px 16px;
+            min-height: 40px;
+            max-width: 200px;
+          }
+        }
+        
+        @media (max-width: 480px) {
+          .sister-company-btn {
+            font-size: 11px;
+            padding: 6px 14px;
+            min-height: 36px;
+            max-width: 180px;
+          }
+        }
+        
+        .sister-company-slider .slick-dots {
+          bottom: -35px !important;
+        }
+        
+        .sister-company-slider .slick-dots li button:before {
+          color: #0E5543 !important;
+          font-size: 8px !important;
+        }
+        
+        .sister-company-slider .slick-dots li.slick-active button:before {
+          color: #0E5543 !important;
+          opacity: 1 !important;
+        }
+      `}</style>
     </section>
   );
 };
