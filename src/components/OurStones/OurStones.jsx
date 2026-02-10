@@ -652,13 +652,31 @@ export default function OurStones() {
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Full Width Banner - Outside Container */}
-      <div className="relative w-full h-[500px] overflow-hidden mb-20">
-        <img
-          src={bannerImage}
-          alt="Our Premium Stones Collection"
-          className="w-full h-full object-cover object-center"
-          loading="lazy"
-        />
+      <div className="relative w-full h-[300px] sm:h-[400px] md:h-[500px] overflow-hidden mb-20 bg-[#0E5543]">
+        {/* Banner Text */}
+        <div className="absolute inset-0 flex items-center justify-center">
+          <div className="text-center px-4 sm:px-6 lg:px-8">
+            <h1 
+              className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4 leading-tight"
+              style={{ fontFamily: "Montserrat", fontWeight: "300", letterSpacing: "0.05em" }}
+            >
+              Premium Stone Collection
+            </h1>
+            <p 
+              className="text-base sm:text-lg md:text-xl text-white/90 max-w-3xl mx-auto leading-relaxed"
+              style={{ fontFamily: "Montserrat", fontWeight: "300", letterSpacing: "0.02em" }}
+            >
+              Discover our exclusive range of premium natural stones, 
+              crafted to perfection for your architectural and design needs
+            </p>
+            <button 
+              className="mt-6 px-6 sm:px-8 py-3 bg-white text-[#0E5543] font-semibold rounded-lg hover:bg-[#F2E1C5] hover:scale-105 transition-all duration-300"
+              style={{ fontFamily: "Montserrat", fontWeight: "500", letterSpacing: "0.02em" }}
+            >
+              Explore Collection
+            </button>
+          </div>
+        </div>
       </div>
 
       {/* Content Container */}

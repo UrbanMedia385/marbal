@@ -3,11 +3,11 @@ import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { FiAward, FiUsers, FiHeart, FiCheckCircle } from "react-icons/fi";
 
-// ✅ Import images from assets
-import about1 from "../../assets/about1.jpg";
-import about2 from "../../assets/about2.jpg";
-import about3 from "../../assets/about3.jpg";
-import about4 from "../../assets/about4.jpg";
+// Import images from assets
+import about1 from "../../assets/home_img/4.jpg";
+import about2 from "../../assets/home_img/1 2.jpg.jpeg";
+import about3 from "../../assets/home_img/3 2.jpg.jpeg";
+import about4 from "../../assets/home_img/2.jpg";
 import HeaderContent from "../Helper/HeaderContent";
 import Banner from "../Helper/Banner";
 
@@ -89,7 +89,7 @@ const About = () => {
                 whileHover="hover"
               >
                 <img
-                  src={about2}
+                  src={about1}
                   alt="Granite Worktop" 
                   className="w-full h-40 sm:h-48 md:h-64 lg:h-72 xl:h-80 object-cover transform group-hover:scale-110 transition-transform duration-700"
                 />
@@ -117,7 +117,7 @@ const About = () => {
                 whileHover="hover"
               >
                 <img
-                  src={about4}
+                  src={about3}
                   alt="Bathroom Interior"
                   className="w-full h-40 sm:h-48 md:h-64 lg:h-72 xl:h-80 object-cover transform group-hover:scale-110 transition-transform duration-700"
                 />
