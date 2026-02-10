@@ -33,7 +33,7 @@ const SisterCompany = () => {
     setCurrentIndex(index);
   };
 
-  // Desktop: Use react-slick
+  // Desktop: Use react-slick with responsive settings
   const settings = {
     dots: true,
     infinite: true,
@@ -43,18 +43,42 @@ const SisterCompany = () => {
     autoplay: true,
     autoplaySpeed: 3000,
     arrows: false,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 1,
+        }
+      },
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+        }
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        }
+      }
+    ]
   };
 
   return (
-    <section className="bg-[#F2E1C5] text-[#0E5543] py-12 sm:py-16">
+    <section className="bg-white text-gray-800 py-16 sm:py-20 lg:py-24">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-8 sm:mb-12">
-          <h2
-            className="text-2xl sm:text-3xl font-bold mb-6"
-            style={{ fontFamily: "Montserrat", fontWeight: "200", letterSpacing: "0.1em" }}
-          >
-            Sister Company
+        {/* Header Section */}
+        <div className="text-center mb-12 sm:mb-16">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 text-gray-900">
+            Sister Companies
           </h2>
+          <p className="text-base sm:text-lg text-gray-600 max-w-3xl mx-auto">
+            Our diverse portfolio of companies working together to deliver excellence across multiple industries
+          </p>
         </div>
         
         {isMobile ? (
@@ -62,16 +86,16 @@ const SisterCompany = () => {
           <div className="mobile-sister-carousel">
             <div className="mobile-slide-container">
               <div 
-                className="mobile-slide active"
+                className="mobile-slide"
                 style={{
                   transform: `translateX(-${currentIndex * 100}%)`
                 }}
               >
                 {companyNames.map((name, index) => (
                   <div key={index} className="mobile-slide-item">
-                    <p className="sister-company-btn">
-                      {name}
-                    </p>
+                    <div className="sister-company-card">
+                      <h3 className="company-name">{name}</h3>
+                    </div>
                   </div>
                 ))}
               </div>
@@ -102,10 +126,8 @@ const SisterCompany = () => {
             <Slider {...settings}>
               {companyNames.map((name, index) => (
                 <div key={index} className="sister-slide">
-                  <div className="sister-slide-content">
-                    <p className="sister-company-btn">
-                      {name}
-                    </p>
+                  <div className="sister-company-card">
+                    <h3 className="company-name">{name}</h3>
                   </div>
                 </div>
               ))}

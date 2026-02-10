@@ -1,6 +1,7 @@
 import React from 'react';
 import { FaGlobe, FaShippingFast, FaCertificate, FaHandshake } from 'react-icons/fa';
 import { useNavigate } from 'react-router-dom';
+import artboard from '../../../dist/assets/Artboard.jpg';
 
 const Exporters = () => {
   const navigate = useNavigate();
@@ -228,7 +229,7 @@ const Exporters = () => {
             </div>
             <div className="relative">
               <img 
-                src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+                src={artboard}
                 alt="Marble Export"
                 className="w-full h-96 object-cover rounded-xl shadow-lg"
               />
