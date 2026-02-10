@@ -20,7 +20,7 @@ const categories = [
   },
   {
     id: 18,
-    name: "ForestGreen",
+    name: "Forest Green",
     image : ForestGreen,
     description:
       "Enrich your interiors with the timeless charm of nature’s finest creation.",

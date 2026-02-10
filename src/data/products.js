@@ -102,7 +102,7 @@ export const allProducts = [
   { id: 15, name: "Pink Marble", image: pinkMarble, category: "Marble", description: "Beautiful pink marble with delicate coloring and smooth finish." },
   { id: 16, name: "Rosso Lavante", image: rossoLavante, category: "Marble", description: "Italian-style marble with rich red tones and elegant patterns." },
   { id: 17, name: "Surata Green", image: surataGreen, category: "Marble", description: "Choose the shade of distinction, crafted for those who value rarity." },
-  { id: 18, name: "ForestGreen", image: forestGreen, category: "Marble", description: "Enrich your interiors with the timeless charm of nature's finest creation." },
+  { id: 18, name: "Forest Green", image: forestGreen, category: "Marble", description: "Enrich your interiors with the timeless charm of nature's finest creation." },
   { id: 19, name: "Spider Green", image: spiderGreen, category: "Marble", description: "Let the calm of green breathe life into every corner of your space." },
   { id: 20, name: "R Green-Marble", image: rGreenMarble, category: "Marble", description: "Choose the shade of distinction, crafted for those who value rare." },
    { id: 21, name: "Afyon White", image: afyonWhite },

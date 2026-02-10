@@ -46,7 +46,7 @@ const marbleProducts = [
   { id: 15, name: "Pink Marble", image: pinkMarble },
   { id: 16, name: "Rosso Lavante", image: rossoLavante },
   { id: 17, name: "Surata Green", image: surataGreen, description:"" },
-  { id: 18, name: "ForestGreen", image: forestGreen },
+  { id: 18, name: "Forest Green", image: forestGreen },
   { id: 19, name: "Spider Green", image: spiderGreen },
   { id: 20, name: "R Green-Marble", image: rGreenMarble },
   { id: 21, name: "Afyon White", image: afyonWhite },

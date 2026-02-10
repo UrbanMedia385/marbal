@@ -14,15 +14,28 @@ const SisterCompany = () => {
     autoplaySpeed: 3000,
     responsive: [
       {
-        breakpoint: 768,
+        breakpoint: 1024,
         settings: {
           slidesToShow: 2,
+          slidesToScroll: 1,
+        },
+      },
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          centerMode: true,
+          centerPadding: '20px',
         },
       },
       {
         breakpoint: 480,
         settings: {
           slidesToShow: 1,
+          slidesToScroll: 1,
+          centerMode: true,
+          centerPadding: '10px',
         },
       },
     ],
@@ -31,32 +44,44 @@ const SisterCompany = () => {
   const companyNames = ["ODA Industries", "Jewan Jyoti", "Rishabh Minerals"];
 
   return (
-    <section className="bg-[#F2E1C5] text-[#0E5543] py-12">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <h2
-          className="text-2xl sm:text-3xl font-bold mb-6"
-          style={{ fontFamily: "Montserrat", fontWeight: "200", letterSpacing: "0.1em" }}
-        >
-          Sister Company
-        </h2>
-        <Slider {...settings}>
-          {companyNames.map((name, index) => (
-            <div key={index} className="px-4">
-              <p
-                className="text-lg font-semibold px-4 py-2 rounded"
-                style={{
-                  backgroundColor: "#0E5543",
-                  color: "#F2E1C5",
-                  fontFamily: "Montserrat",
-                  fontWeight: "200",
-                  letterSpacing: "0.1em",
-                }}
-              >
-                {name}
-              </p>
-            </div>
-          ))}
-        </Slider>
+    <section className="bg-[#F2E1C5] text-[#0E5543] py-12 sm:py-16">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="text-center mb-8 sm:mb-12">
+          <h2
+            className="text-2xl sm:text-3xl font-bold mb-6"
+            style={{ fontFamily: "Montserrat", fontWeight: "200", letterSpacing: "0.1em" }}
+          >
+            Sister Company
+          </h2>
+        </div>
+        
+        {/* Slider container with proper mobile alignment */}
+        <div className="relative">
+          <Slider {...settings}>
+            {companyNames.map((name, index) => (
+              <div key={index} className="flex justify-center items-center px-2 sm:px-4">
+                <div className="w-full max-w-xs mx-auto">
+                  <p
+                    className="text-base sm:text-lg font-semibold px-6 py-3 sm:px-8 sm:py-4 rounded-lg text-center mx-auto"
+                    style={{
+                      backgroundColor: "#0E5543",
+                      color: "#F2E1C5",
+                      fontFamily: "Montserrat",
+                      fontWeight: "200",
+                      letterSpacing: "0.1em",
+                      minHeight: "60px",
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                    }}
+                  >
+                    {name}
+                  </p>
+                </div>
+              </div>
+            ))}
+          </Slider>
+        </div>
       </div>
     </section>
   );
