@@ -98,8 +98,8 @@ const Footer = () => {
             <ul className="space-y-4 mx-[-20px]"            style={{ fontFamily: 'Montserrat', fontWeight: '200', letterSpacing: '0.1em' }}>
 
               {[
-                { label: "Green ", to: "/products/green-marble" },
-                { label: "White ", to: "/products/white-marble" },
+                { label: "Green Marble  ", to: "/products/green-marble" },
+                { label: "White Marble", to: "/products/white-marble" },
                 { label: "Granite", to: "/products/granite" },
                 { label: "Sandstone", to: "/products/sandstone" }
                
