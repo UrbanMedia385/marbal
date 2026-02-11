@@ -19,7 +19,7 @@ const FlautCollection = () => {
         origin: "Non-slip surface options",
         type: "Water resistant",
         category: "Long-lasting durability",
-        image: "/livingrooom.jpg",
+        image: "/dist/assets/AgariaWhite.jpeg",
         productId: 1
       }
     },
@@ -39,7 +39,7 @@ const FlautCollection = () => {
         origin: "Water & stain resistant",
         type: "Hygienic surface",
         category: "Custom edge profiles",
-        image: "/kitchen2.jpg",
+        image: "/dist/assets/KashmirWhite.jpeg",
         productId: 47
       }
     },
@@ -59,7 +59,7 @@ const FlautCollection = () => {
         origin: "High traffic durability",
         type: "Low maintenance",
         category: "Professional appearance",
-        image: "/cozyroom.jpg",
+        image: "/dist/assets/ImperialRed.jpeg",
         productId: 43
       }
     }
