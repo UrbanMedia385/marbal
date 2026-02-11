@@ -19,7 +19,7 @@ const FlautCollection = () => {
         origin: "Non-slip surface options",
         type: "Water resistant",
         category: "Long-lasting durability",
-        image: "/dist/assets/AgariaWhite.jpeg",
+        image: "/AgariaWhite.jpeg",
         productId: 1
       }
     },
@@ -39,7 +39,7 @@ const FlautCollection = () => {
         origin: "Water & stain resistant",
         type: "Hygienic surface",
         category: "Custom edge profiles",
-        image: "/dist/assets/KashmirWhite.jpeg",
+        image: "/KashmirWhite.jpeg",
         productId: 47
       }
     },
@@ -59,7 +59,7 @@ const FlautCollection = () => {
         origin: "High traffic durability",
         type: "Low maintenance",
         category: "Professional appearance",
-        image: "/dist/assets/ImperialRed.jpeg",
+        image: "/ImperialRed.jpeg",
         productId: 43
       }
     }
