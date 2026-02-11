@@ -50,7 +50,7 @@ export default function ShowcasingTimeline() {
                       idx === activeIndex ? 'scale-125 ring-4 ring-white shadow-2xl' : 'hover:scale-110'
                     }`}
                   >
-                    <span className="text-white font-bold text-xs md:text-xs">
+                    <span className="text-white font-bold text-sm md:text-base lg:text-lg">
                       {milestone.year.split('-')[0]}
                     </span>
                   </div>
