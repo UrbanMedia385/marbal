@@ -7,7 +7,7 @@ const founders = [
   {
     name: 'Dev Chand Patel',
     role: 'Directo',
-    image: '/devChandPatel.jpeg',
+    image: '/newDevChandPatel.jpeg', // updated image path
     bio: 'The cornerstone of Rishabh Green’s journey, Dev Chand Patel brings decades of experience and vision. His leadership has shaped the brand’s enduring legacy of trust, quality, and innovation in the stone industry. ',
   },
   {
