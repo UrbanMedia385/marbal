@@ -64,10 +64,6 @@ const MarbleQuarryHome = () => {
       content:
         "Let the calm of green breathe life into every corner of your space.",
     },
-    {
-      title: "Advanced Production Facility",
-      content: "Engineering Excellence in Every Stone.",
-    },
   ];
 
   const containerVariants = {
@@ -281,15 +277,6 @@ const MarbleQuarryHome = () => {
                     <span className="bg-[#0E5543] text-white px-2 sm:px-3 py-1 sm:py-1.5 rounded-full text-xs font-semibold shadow-xl border border-white/20">
                       🎬 Live Process
                     </span>
-                  </div>
-
-                  <div className="absolute bottom-4 left-4 right-4">
-                    <h3 className="text-white text-base sm:text-lg font-bold mb-2 drop-shadow-xl">
-                      Advanced CNC Cutting
-                    </h3>
-                    <p className="text-white/90 text-sm drop-shadow-lg">
-                      Witness our precision machinery in action
-                    </p>
                   </div>
 
                   <motion.div

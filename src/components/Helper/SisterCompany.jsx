@@ -19,7 +19,7 @@ const SisterCompany = () => {
     return () => window.removeEventListener('resize', checkMobile);
   }, []);
 
-  const companyNames = ["ODA Industries", "Jewan Jyoti", "Rishabh Minerals"];
+  const companyNames = ["ODA Industries", "Jeevan Jyoti", "Rishabh Minerals"];
   
   const nextSlide = () => {
     setCurrentIndex((prev) => (prev + 1) % companyNames.length);

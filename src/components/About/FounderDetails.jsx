@@ -6,20 +6,20 @@ import HeaderContent from '../Helper/HeaderContent';
 const founders = [
   {
     name: 'Dev Chand Patel',
-    role: 'Directo',
-    image: '/devChandPatel.jpeg',
+    role: 'Director',
+    image: '/devChandPatelNew.jpeg',
     bio: 'The cornerstone of Rishabh Green’s journey, Dev Chand Patel brings decades of experience and vision. His leadership has shaped the brand’s enduring legacy of trust, quality, and innovation in the stone industry. ',
   },
   {
     name: 'Poonam Chand Patel',
     role: 'Director',
-    image: '/poonamChandPatel.jpeg',
+    image: '/poonamChandPatelNew.jpeg',
     bio: 'With an unwavering eye for perfection, Director Poonam Chand Patel anchors Rishabh Green’s growth with strategy and substance. His leadership blends traditional values with modern vision, ensuring every slab of marble reflects the brand’s enduring integrity and excellence. ',
   },
   {
     name: 'Rajendra Patel',
     role: 'Director', 
-    image: '/rajendraPatel.jpeg',
+    image: '/rajendraPatelNew.jpeg',
     bio: 'Director Rajendra Patel embodies precision in progress. Steering production and global partnerships, he champions innovation while preserving the authenticity of Rishabh Green’s craft , transforming raw stone into timeless statements of elegance across continents. '
   },
   {

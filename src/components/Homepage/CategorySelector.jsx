@@ -41,7 +41,7 @@ const categories = [
     name: "R Green-Marble",
     image : rGreen,
     description:
-      "Choose the shade of distinction ,crafted for those who value rare. ",
+      "Choose shade of distinction, crafted for those who value rare quality.",
     color: "from-amber-800/30 to-amber-600/20",
     accent: "amber",
   },
