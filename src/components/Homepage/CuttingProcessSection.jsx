@@ -2,6 +2,18 @@ import React, { useState, useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import { Play, Pause, ChevronRight, ArrowRight, Sparkles } from "lucide-react";
 
+// Import images from assets
+import multiDiscImage from "../../assets/Multi Disc Block Cutter.jpeg";
+import polishingImage from "../../assets/Polishing-D0bgZyIa.jpg";
+import automatedTilingImage from "../../assets/Automated Tiling _ Finishing-DkcMY4E2.jpg";
+import mysticGreenImage from "../../assets/Mystic-Green-Marble_1_-BBwfnO0i.jpg";
+import forestGreenImage from "../../assets/FOREST GREEN-U_vWyHM-.png";
+import spiderGreenImage from "../../assets/SPIDER GREEN-BDlKCFtS.png";
+import marbelProcessImage from "../../assets/marbelProcess.jpeg";
+import indianMarbleSupplierImage from "../../assets/Indian-Marble-Supplier_1_-Cpx_0NiL.jpg";
+import iconicBlackMarbleImage from "../../assets/Iconic-black-marble-1200x1200-1_1_-DrRkRIaV.jpg";
+import artboardImage from "../../assets/Artboard.jpg";
+
 const MarbleQuarryHome = () => {
   const [isPlaying, setIsPlaying] = useState(true);
   const videoRef = useRef(null);
@@ -21,24 +33,24 @@ const MarbleQuarryHome = () => {
 
   const imageGallery = [
     {
-      src: "/marbelProcess.jpeg",
-      title: "Precision Cutting",
-      description: "Diamond wire technology",
+      src: multiDiscImage,
+      title: "Multi Disc Cutting",
+      description: "Precision block cutting technology",
     },
     {
-      src: "/qualityControl.jpeg",
-      title: "Quality Control",
-      description: "Laser measurement",
+      src: automatedTilingImage,
+      title: "Automated Processing",
+      description: "Advanced finishing line",
     },
     {
-      src: "/polishing.jpeg",
-      title: "Polishing",
-      description: "Mirror finish",
+      src: polishingImage,
+      title: "Polishing Process",
+      description: "Mirror finish application",
     },
     {
-      src: "/readyToDeliver.jpeg",
-      title: "Finished Products",
-      description: "Ready for delivery",
+      src: mysticGreenImage,
+      title: "Premium Green Marble",
+      description: "Finished product quality",
     },
   ];
   
@@ -257,26 +269,24 @@ const MarbleQuarryHome = () => {
                 transition={{ duration: 0.4 }}
               >
                 <div className="relative aspect-video w-full">
-                  <video
-                    ref={videoRef}
-                    autoPlay
-                    muted
-                    loop
-                    className="w-full h-full object-cover"
-                    poster="https://images.unsplash.com/photo-1581094794329-cd525614faec?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-                  >
-                    <source
-                      src="/marbel_cutting_process.mp4"
-                      type="video/mp4"
-                    />
-                  </video>
+                  <img
+                    src={indianMarbleSupplierImage}
+                    alt="Indian Marble Manufacturing Process"
+                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                  />
 
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent"></div>
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent"></div>
 
                   <div className="absolute top-2 sm:top-3 md:top-4 left-2 sm:left-3 md:left-4">
                     <span className="bg-[#0E5543] text-white px-2 sm:px-3 py-1 sm:py-1.5 rounded-full text-xs font-semibold shadow-xl border border-white/20">
-                      🎬 Live Process
+                      🏭 Premium Manufacturing
                     </span>
+                  </div>
+
+                  <div className="absolute bottom-2 sm:bottom-3 md:bottom-4 right-2 sm:right-3 md:right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <div className="bg-white/90 backdrop-blur-md px-3 py-1.5 rounded-full shadow-lg">
+                      <span className="text-[#0E5543] text-xs font-bold">View Process →</span>
+                    </div>
                   </div>
 
                   <motion.div
@@ -299,9 +309,9 @@ const MarbleQuarryHome = () => {
                 <div className="absolute -inset-4 bg-[#0E5543]/5 -z-10"></div>
 
                 <div className="grid grid-cols-8 grid-rows-5 gap-2 sm:gap-3 h-48 sm:h-56 lg:h-64 w-full">
-                  {/* Large Main Image */}
+                  {/* Enhanced Large Main Image */}
                   <motion.div
-                    className="col-span-4 row-span-4 relative group cursor-pointer overflow-hidden shadow-xl rounded-lg"
+                    className="col-span-4 row-span-4 relative group cursor-pointer overflow-hidden shadow-2xl rounded-xl border-2 border-white/20"
                     variants={imageVariants}
                     whileHover="hover"
                   >
@@ -310,15 +320,42 @@ const MarbleQuarryHome = () => {
                       alt={imageGallery[0].title}
                       className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                    <div className="absolute bottom-2 sm:bottom-3 md:bottom-4 left-2 sm:left-3 md:left-4 transform translate-y-4 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-500">
-                      <div className="bg-black/70 backdrop-blur-md p-2 sm:p-3 border border-white/20">
-                        <h4 className="text-white font-bold text-xs sm:text-sm">
-                          {imageGallery[0].title}
-                        </h4>
-                        <p className="text-white/80 text-xs">
+                    
+                    {/* Enhanced Overlay with Gradient */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-700"></div>
+                    
+                    {/* Floating Badge */}
+                    <div className="absolute top-3 left-3 opacity-0 group-hover:opacity-100 transition-all duration-500 transform -translate-y-2 group-hover:translate-y-0">
+                      <span className="bg-[#0E5543] text-white px-3 py-1.5 rounded-full text-xs font-bold shadow-lg border border-white/30">
+                        Featured Process
+                      </span>
+                    </div>
+                    
+                    {/* Enhanced Content Box */}
+                    <div className="absolute bottom-3 left-3 right-3 transform translate-y-8 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-700">
+                      <div className="bg-white/95 backdrop-blur-md p-4 rounded-xl shadow-2xl border border-white/30">
+                        <div className="flex items-start justify-between mb-2">
+                          <h4 className="text-[#0E5543] font-bold text-sm sm:text-base">
+                            {imageGallery[0].title}
+                          </h4>
+                          <div className="bg-[#0E5543]/10 p-1.5 rounded-full">
+                            <ArrowRight className="w-3 h-3 text-[#0E5543]" />
+                          </div>
+                        </div>
+                        <p className="text-gray-700 text-xs sm:text-sm leading-relaxed">
                           {imageGallery[0].description}
                         </p>
+                        <div className="mt-3 flex items-center gap-2">
+                          <div className="w-2 h-2 bg-[#0E5543] rounded-full animate-pulse"></div>
+                          <span className="text-xs text-gray-600 font-medium">Learn More</span>
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Decorative Elements */}
+                    <div className="absolute top-3 right-3 opacity-0 group-hover:opacity-100 transition-all duration-500">
+                      <div className="w-8 h-8 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center">
+                        <div className="w-4 h-4 bg-white rounded-full animate-ping"></div>
                       </div>
                     </div>
                   </motion.div>

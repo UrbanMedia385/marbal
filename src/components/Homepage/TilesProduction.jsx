@@ -22,7 +22,7 @@ import MultiDiscImage from "../../assets/marbles/Multi Disc Block Cutter.webp";
 import AutomatedTilingImage from "../../assets/marbles/Automated Tiling & Finishing.jpg";
 
 import blockCuttingImg from "../../assets/Block Cutting.jpeg";
-import calibrationImg from "../../assets/tiles-Calibration.jpg";
+import calibrationImg from "../../assets/Calibration.jpeg";
 import grindingImg from "../../assets/tiles-Grinding.webp"; 
 import polishing  from "../../assets/Polishing.jpg"; 
 
