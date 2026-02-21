@@ -59,7 +59,7 @@ button:focus-visible {
     color: #747bff;
   }
 
-  button {
+  button:not(.btn-custom):not([class*="bg-"]) {
     background-color: #f9f9f9;
   }
 /* Custom Marble Textures for Stats Cards */
