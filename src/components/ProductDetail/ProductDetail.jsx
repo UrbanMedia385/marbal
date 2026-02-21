@@ -484,7 +484,7 @@ const product = {
           </div>
         </div>
 
-        <div className="bg-white rounded-xl sm:rounded-2xl shadow-lg p-4 sm:p-8 mb-8 sm:mb-16">
+      {/* <div className="bg-white rounded-xl sm:rounded-2xl shadow-lg p-4 sm:p-8 mb-8 sm:mb-16">
           <h2
             className="text-2xl text-center sm:text-2xl md:text-3xl lg:text-4xl font-bold text-[#0E5543] leading-tight w-full mb-4 mt-10"
             style={{ fontFamily: "Arial, sans-serif", fontWeight: "200" }}
@@ -493,14 +493,14 @@ const product = {
           </h2>
 
           {/* Decorative line */}
-          <div className="h-0.5 bg-gradient-to-r from-[#0E5543] via-[#F2E1C5] to-[#0E5543] mx-auto mb-4 sm:mb-5 md:mb-6 lg:mb-8 w-20" />
+          {/*<div className="h-0.5 bg-gradient-to-r from-[#0E5543] via-[#F2E1C5] to-[#0E5543] mx-auto mb-4 sm:mb-5 md:mb-6 lg:mb-8 w-20" />
           <p className="text-gray-600 text-center mb-6 sm:mb-8 max-w-3xl mx-auto text-sm sm:text-base">
             See how our premium marble appears in actual installations and
             real-world applications
-          </p>
+          </p>*/}
 
           {/* Desktop Grid */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-0">
+          {/*<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-0">
             <div className="relative group overflow-hidden ">
               <img
                 src="https://a.storyblok.com/f/150360/1100x825/5d46235b7a/whitesands_bath_01.jpg/m/"
@@ -570,12 +570,12 @@ const product = {
                 </div>
                 <div className="flex items-center justify-center md:justify-center space-x-2">
                   <div className="w-2 h-2 bg-[#0E5543] rounded-full flex-shrink-0"></div>
-                  <span>Polished surface with mirror-like finish</span>
-                </div>
+                 <span>Polished surface with mirror-like finish</span>
+              {/*  </div>
               </div>
             </div>
           </div>
-        </div>
+        </div>*/},
 
         {/* Related Products */}
         <div className="mb-8 sm:mb-16">

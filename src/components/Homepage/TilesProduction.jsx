@@ -91,10 +91,10 @@ const TilesProduction = () => {
             At Rishabh Green Marbles, we transform nature’s rarest green marble into precision-crafted tiles designed for refined, modern spaces.
           </motion.p>
           <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.6 }} className="flex flex-col sm:flex-row gap-5 items-center justify-center w-full">
-            <button className="flex items-center gap-3 bg-[#2eb872] hover:bg-[#24965d] text-white px-8 py-4 rounded-md font-semibold transition-all duration-300">
+            <button className="flex items-center gap-3 bg-[#0E5543] hover:bg-[#0c4a3a] text-white px-8 py-4 rounded-md font-semibold transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105">
               <FaPlay className="text-sm" /> Explore Our Process
             </button>
-            <button className="flex items-center gap-3 bg-transparent border border-white/20 hover:bg-white/5 text-white px-8 py-4 rounded-md font-semibold transition-all">
+            <button className="flex items-center gap-3 bg-transparent border-2 border-white hover:bg-white hover:text-[#0E5543] text-white px-8 py-4 rounded-md font-semibold transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105">
               View Collection
             </button>
           </motion.div>
