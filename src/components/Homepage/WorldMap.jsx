@@ -94,6 +94,7 @@ const locations = [
 
 export default function WorldMap() {
   const [selectedLocation, setSelectedLocation] = useState(null);
+  const [mapZoom, setMapZoom] = useState(1);
 
   // Handle selection of a country or pin
   const handleSelect = (geoName) => {
@@ -105,6 +106,14 @@ export default function WorldMap() {
     } else {
       setSelectedLocation(null);
     }
+  };
+
+  const handleZoomIn = () => {
+    setMapZoom((prev) => Math.min(prev + 0.3, 4));
+  };
+
+  const handleZoomOut = () => {
+    setMapZoom((prev) => Math.max(prev - 0.3, 1));
   };
 
   return (
@@ -124,7 +133,7 @@ export default function WorldMap() {
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.3, duration: 0.8 }}
-          className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 md:gap-6 lg:gap-8 mt-8 sm:mt-12 md:mt-16 lg:mt-20 max-w-7xl px-2 sm:px-4 lg:px-8 mx-auto"
+          className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 md:gap-6 lg:gap-8 mt-8 sm:mt-12 md:mt-16 lg:mt-20 max-w-7xl px-3 sm:px-5 lg:px-8 mx-auto bg-white rounded-xl shadow-2xl border border-[#D4C1A3] py-4 sm:py-6 md:py-8"
         >
           {[
             { icon: FaGlobeAmericas, number: 7, suffix: "+", label: "Countries", color: "#0E5543" },
@@ -138,15 +147,15 @@ export default function WorldMap() {
               whileTap={{ scale: 0.95 }}
               className="relative group cursor-pointer perspective-1000"
             >
-              <div className="relative bg-gradient-to-br from-white/25 via-white/10 to-white/5 backdrop-blur-xl p-3 sm:p-4 md:p-6 lg:p-8 border border-white/40 shadow-2xl transition-all duration-500 overflow-hidden">
-                <motion.div className="relative mb-3 sm:mb-4 md:mb-6 mx-auto w-12 h-12 sm:w-16 sm:h-16 md:w-20 md:h-20 flex items-center justify-center bg-white/50 backdrop-blur-sm border border-white/60 shadow-lg">
+              <div className="relative bg-gradient-to-br from-[#F7FFFC] via-white to-[#EAF8F3] p-3 sm:p-4 md:p-6 lg:p-8 border border-[#B8D8CC] shadow-xl transition-all duration-500 overflow-hidden">
+                <motion.div className="relative mb-3 sm:mb-4 md:mb-6 mx-auto w-12 h-12 sm:w-16 sm:h-16 md:w-20 md:h-20 flex items-center justify-center bg-white border border-[#B8D8CC] shadow-lg">
                   <stat.icon className="text-lg sm:text-xl md:text-2xl lg:text-3xl drop-shadow-lg" style={{ color: stat.color }} />
                 </motion.div>
                 <motion.div
                   initial={{ scale: 0.5, opacity: 0 }}
                   animate={{ scale: 1, opacity: 1 }}
                   transition={{ delay: index * 0.2 + 0.5 }}
-                  className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black text-white mb-2 sm:mb-3 md:mb-4 text-center tracking-tight drop-shadow-2xl"
+                  className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black text-[#0E5543] mb-2 sm:mb-3 md:mb-4 text-center tracking-tight"
                 >
                   <AnimatedCounter from={0} to={stat.number} duration={2} />
                   <span className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl">{stat.suffix}</span>
@@ -155,7 +164,7 @@ export default function WorldMap() {
                   initial={{ y: 20, opacity: 0 }}
                   animate={{ y: 0, opacity: 1 }}
                   transition={{ delay: index * 0.2 + 0.7 }}
-                  className="text-white text-xs sm:text-sm md:text-base font-bold uppercase tracking-[0.1em] sm:tracking-[0.2em] md:tracking-[0.3em] text-center drop-shadow-sm"
+                  className="text-[#1A7A62] text-xs sm:text-sm md:text-base font-bold uppercase tracking-[0.1em] sm:tracking-[0.2em] md:tracking-[0.3em] text-center"
                 >
                   {stat.label}
                 </motion.div>
@@ -171,7 +180,7 @@ export default function WorldMap() {
         {/* The Map Component */}
         <div className="h-[400px] sm:h-[500px] md:h-[600px] w-full">
           <ComposableMap projection="geoMercator" projectionConfig={{ scale: 150 }}>
-            <ZoomableGroup center={[20, 0]} zoom={1}>
+            <ZoomableGroup center={[20, 0]} zoom={mapZoom}>
               
               {/* Countries Layer */}
               <Geographies geography={geoUrl}>
@@ -251,6 +260,25 @@ export default function WorldMap() {
 
             </ZoomableGroup>
           </ComposableMap>
+        </div>
+
+        <div className="absolute right-3 bottom-3 sm:right-4 sm:bottom-4 z-20 flex flex-col gap-2">
+          <button
+            type="button"
+            onClick={handleZoomIn}
+            className="w-10 h-10 sm:w-11 sm:h-11 bg-white text-[#0E5543] border border-[#1A7A62]/35 rounded-md shadow-lg hover:bg-[#F3FFFB] transition-colors duration-200 text-xl font-semibold leading-none"
+            aria-label="Zoom in"
+          >
+            +
+          </button>
+          <button
+            type="button"
+            onClick={handleZoomOut}
+            className="w-10 h-10 sm:w-11 sm:h-11 bg-white text-[#0E5543] border border-[#1A7A62]/35 rounded-md shadow-lg hover:bg-[#F3FFFB] transition-colors duration-200 text-xl font-semibold leading-none"
+            aria-label="Zoom out"
+          >
+            -
+          </button>
         </div>
 
         {/* --- Location Details Popup (Framer Motion) --- */}

@@ -42,11 +42,11 @@ const Homepage = () => {
       </Suspense> */}
 
       <Suspense fallback={<div>Loading Cutting Process...</div>}>
-        <CuttingProcessSection />
+        <NaturalStoneTilesInfo />
       </Suspense>
 
       <Suspense fallback={<div>Loading Cutting Process...</div>}>
-        <NaturalStoneTilesInfo />
+        <CuttingProcessSection />
       </Suspense>
 
       {/* Add SisterCompany slider here */}
