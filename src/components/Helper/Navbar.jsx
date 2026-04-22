@@ -8,10 +8,7 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [activeItem, setActiveItem] = useState("home");
-  const [showOurStonesDropdown, setShowOurStonesDropdown] = useState(false);
-  const [showExportersDropdown, setShowExportersDropdown] = useState(false);
   const [mobileDropdowns, setMobileDropdowns] = useState({});
-  const [clickTimeout, setClickTimeout] = useState(null);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -31,13 +28,12 @@ const Navbar = () => {
   const menuItems = [
     { name: "Home", path: "/" },
     { name: "About Us", path: "/about" },
-    { 
-      name: "Our Stones", 
+    {
+      name: "Product Range",
       path: "/OurStones",
       dropdown: [
-        { name: "Marble", path: "/marble" },
-        { name: "Granite", path: "/granite" },
-        { name: "Sandstone", path: "/sandstone" },
+        { name: "Our Stones", path: "/OurStones" },
+        { name: "Our Tiles", path: "/tiles-production" },
       ]
     },
     
@@ -76,7 +72,7 @@ const Navbar = () => {
           : "bg-gradient-to-b from-gray-900 to-gray-850 py-2 border-b border-gray-700/30"
         }`}
     >
-      <div className="max-w-8xl mx-auto px-3 sm:px-2 md:px-32">
+      <div className="max-w-8xl mx-auto px-3 sm:px-4 lg:px-8 xl:px-16">
         <div className="flex justify-between items-center h-20 sm:h-20">
           {/* Logo */}
           <div className="flex items-center flex-shrink-0">
@@ -84,72 +80,46 @@ const Navbar = () => {
               <img
                 src={logo}
                 alt="RGM"
-                className="h-28 w-28 sm:h-30 sm:w-30 md:h-32 md:w-32 object-contain"
+                className="h-24 w-24 sm:h-28 sm:w-28 xl:h-32 xl:w-32 object-contain"
               />
             </Link>
           </div>
 
           {/* Desktop Menu */}
-          <div className="hidden lg:flex items-center space-x-4 xl:space-x-6 2xl:space-x-8">
+          <div className="hidden xl:flex items-center space-x-4 2xl:space-x-6">
             {menuItems.map((item) => (
               <div key={item.name} className="relative">
                 {item.dropdown ? (
-                  <div className="relative">
-                    <span
+                  <div className="relative group">
+                    <Link
+                      to={item.path}
                       className={`transition-all duration-300 group cursor-pointer ${activeItem === item.name.toLowerCase()
                           ? "text-white"
                           : "text-white hover:text-amber-300"
                         }`}
-                      onClick={(e) => {
-                        e.preventDefault();
-                        if (clickTimeout) {
-                          clearTimeout(clickTimeout);
-                          setClickTimeout(null);
-                          // Double click - show dropdown
-                          if (item.name === "Our Stones") {
-                            setShowOurStonesDropdown(!showOurStonesDropdown);
-                            setShowExportersDropdown(false);
-                          } else if (item.name === "Exporters") {
-                            setShowExportersDropdown(!showExportersDropdown);
-                            setShowOurStonesDropdown(false);
-                          }
-                        } else {
-                          // Single click - navigate to page
-                          const timeout = setTimeout(() => {
-                            handleItemClick(item.name.toLowerCase());
-                            window.location.href = item.path;
-                            setClickTimeout(null);
-                          }, 300);
-                          setClickTimeout(timeout);
-                        }
+                      onClick={() => {
+                        handleItemClick(item.name.toLowerCase());
                       }}
                     >
                       <span className="relative text-sm xl:text-base font-medium text-white after:absolute after:w-0 after:h-px after:bg-amber-300 after:left-0 after:-bottom-1 after:transition-all after:duration-300 group-hover:after:w-full">
                         {item.name}
                       </span>
-                    </span>
-                    {((item.name === "Our Stones" && showOurStonesDropdown) || 
-                      (item.name === "Exporters" && showExportersDropdown)) && (
-                      <div className={`absolute top-full mt-2 w-56 xl:w-64 bg-[#0E5543] border border-gray-700 rounded-lg shadow-xl z-50 transform transition-all duration-300 ease-out opacity-0 translate-y-2 animate-in ${item.name === "Exporters" ? "right-0" : "left-0"}`} style={{animation: 'fadeInUp 0.3s ease-out forwards'}}>
-                        {item.dropdown.map((dropItem) => (
-                          <Link
-                            key={dropItem.name}
-                            to={dropItem.path}
-                            style={{textDecoration: "none"}}
-                            className="block px-4 py-3 text-white hover:bg-[#1A7A62] hover:!text-[white] transition-all duration-300 first:rounded-t-lg last:rounded-b-lg cursor-pointer"
-                            onClick={() => {
-                              if (item.name === "Our Stones") {
-                                setShowOurStonesDropdown(false);
-                              } else if (item.name === "Exporters") {
-                                setShowExportersDropdown(false);
-                              }
-                            }}
-                          >
-                            {dropItem.name}
-                          </Link>
-                        ))}
-                      </div>
-                    )}
+                    </Link>
+                    <div
+                      className={`absolute top-full w-56 xl:w-64 bg-[#0E5543] border border-gray-700 rounded-lg shadow-xl z-50 transform transition-all duration-200 ease-out opacity-0 invisible translate-y-2 pointer-events-none group-hover:opacity-100 group-hover:visible group-hover:translate-y-0 group-hover:pointer-events-auto before:content-[''] before:absolute before:inset-x-0 before:-top-3 before:h-3 before:bg-transparent ${item.name === "Exporters" ? "right-0" : "left-0"}`}
+                      style={{ animation: "fadeInUp 0.2s ease-out forwards" }}
+                    >
+                      {item.dropdown.map((dropItem) => (
+                        <Link
+                          key={dropItem.name}
+                          to={dropItem.path}
+                          style={{ textDecoration: "none" }}
+                          className="block px-4 py-3 text-white hover:bg-[#1A7A62] hover:!text-[white] transition-all duration-300 first:rounded-t-lg last:rounded-b-lg cursor-pointer"
+                        >
+                          {dropItem.name}
+                        </Link>
+                      ))}
+                    </div>
                   </div>
                 ) : (
                   <Link
@@ -160,8 +130,6 @@ const Navbar = () => {
                       }`}
                     onClick={() => {
                       handleItemClick(item.name.toLowerCase());
-                      setShowOurStonesDropdown(false);
-                      setShowExportersDropdown(false);
                     }}
                   >
                     <span className="relative text-sm xl:text-base font-medium text-white after:absolute after:w-0 after:h-px after:bg-amber-300 after:left-0 after:-bottom-1 after:transition-all after:duration-300 group-hover:after:w-full">
@@ -190,7 +158,7 @@ const Navbar = () => {
           </div>
 
           {/* Mobile Buttons */}
-          <div className="lg:hidden flex items-center space-x-2 sm:space-x-3">
+          <div className="xl:hidden flex items-center space-x-2 sm:space-x-3">
             <button
               onClick={() => setIsOpen(!isOpen)}
               style={{backgroundColor:"black"}}
@@ -205,14 +173,14 @@ const Navbar = () => {
       {/* Mobile Overlay */}
       {isOpen && (
         <div
-          className="lg:hidden fixed inset-0 backdrop-blur-sm z-40"
+          className="xl:hidden fixed inset-0 backdrop-blur-sm z-40"
           onClick={() => setIsOpen(false)}
         />
       )}
 
       {/* Mobile Sidebar */}
       <div
-        className={`lg:hidden fixed top-0 right-0 h-screen w-64 sm:w-72 md:w-80 bg-white z-50 shadow-2xl transform transition-transform duration-500 ease-in-out ${isOpen ? "translate-x-0" : "translate-x-full"
+        className={`xl:hidden fixed top-0 right-0 h-screen w-64 sm:w-72 md:w-80 bg-white z-50 shadow-2xl transform transition-transform duration-500 ease-in-out ${isOpen ? "translate-x-0" : "translate-x-full"
           }`}
       >
         <div className="flex items-center justify-between px-4 h-14 sm:h-16 border-b border-gray-200">
