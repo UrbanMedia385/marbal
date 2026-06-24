@@ -134,7 +134,7 @@ const product = {
     category: currentProduct.category,
     description: getProductDescription(currentProduct.name),
     namedescriptions: getProductnameDescription(currentProduct.name),
-    images: [
+    images: currentProduct.images || [
       currentProduct.image,
       cloudGrey,
       fantasyBrown,
@@ -213,13 +213,54 @@ const product = {
               {/* Zoom Button */}
               <button
                 onClick={() => setIsZoomed(true)}
-                className="absolute top-2 sm:top-4 right-2 sm:right-4 bg-white/90 backdrop-blur-sm p-1.5 sm:p-2 rounded-full shadow-lg hover:bg-white transition-colors"
+                className="absolute top-2 sm:top-4 right-2 sm:right-4 bg-white/90 backdrop-blur-sm p-1.5 sm:p-2 rounded-full shadow-lg hover:bg-white transition-colors z-10"
               >
                 <FiZoomIn size={16} className="sm:w-5 sm:h-5" />
               </button>
+
+              {/* Navigation Arrows */}
+              {product.images && product.images.length > 1 && (
+                <>
+                  <button
+                    onClick={prevImage}
+                    className="absolute left-2 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white p-2 rounded-full shadow-md transition-colors z-10"
+                    aria-label="Previous image"
+                  >
+                    <FiChevronLeft className="w-5 h-5 text-gray-800" />
+                  </button>
+                  <button
+                    onClick={nextImage}
+                    className="absolute right-2 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white p-2 rounded-full shadow-md transition-colors z-10"
+                    aria-label="Next image"
+                  >
+                    <FiChevronRight className="w-5 h-5 text-gray-800" />
+                  </button>
+                </>
+              )}
             </div>
 
             {/* Thumbnail Images */}
+            {product.images && product.images.length > 1 && (
+              <div className="flex gap-2 overflow-x-auto py-2">
+                {product.images.map((img, index) => (
+                  <button
+                    key={index}
+                    onClick={() => setCurrentImageIndex(index)}
+                    className={`relative w-16 h-16 sm:w-20 sm:h-20 flex-shrink-0 border-2 transition-all rounded-md overflow-hidden ${
+                      currentImageIndex === index
+                        ? "border-[#0E5543] scale-105 shadow-md"
+                        : "border-gray-200 opacity-70 hover:opacity-100"
+                    }`}
+                  >
+                    <img
+                      src={img}
+                      alt={`${product.name} thumbnail ${index + 1}`}
+                      className="w-full h-full object-cover"
+                    />
+                  </button>
+                ))}
+              </div>
+            )}
           </div>
 
           {/* Product Information */}

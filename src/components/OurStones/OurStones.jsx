@@ -10,7 +10,7 @@ import bidasarGreen from "../../assets/marbles/bidasar-green-500x500[1].jpg";
 import cloudGrey from "../../assets/marbles/Cloud-Grey-Marble[1].jpg";
 import fantasyBrown from "../../assets/marbles/fantasy brown marble.jpg";
 import iconicBlack from "../../assets/marbles/Iconic-black-marble-1200x1200-1[1].jpg";
-import iconicGold from "../../assets/marbles/istockphoto-1134258949-612x612.jpg";
+import iconicGold from "../../assets/marbles/Iconic Gold-1.jpeg";
 import indianBlack from "../../assets/marbles/indian-black-marble[1].jpg";
 import katniBeige from "../../assets/marbles/katni-beige-marble-500x500[1].jpg";
 import merryGold from "../../assets/Sandstone/merigold.jpg";

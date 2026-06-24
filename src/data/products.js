@@ -6,7 +6,11 @@ import bidasarGreen from '../assets/marbles/bidasar-green-500x500[1].jpg'
 import cloudGrey from '../assets/marbles/Cloud-Grey-Marble[1].jpg'
 import fantasyBrown from '../assets/marbles/fantasy brown marble.jpg'
 import iconicBlack from '../assets/marbles/Iconic-black-marble-1200x1200-1[1].jpg'
-import iconicGold from '../assets/marbles/istockphoto-1134258949-612x612.jpg'
+import iconicGold1 from '../assets/marbles/Iconic Gold-1.jpeg'
+import iconicGold2 from '../assets/marbles/Iconic Gold-2.jpeg'
+import iconicGold3 from '../assets/marbles/Iconic Gold-3.jpeg'
+import iconicGold4 from '../assets/marbles/Iconic Gold-4.jpeg'
+import iconicGold5 from '../assets/marbles/Iconic Gold-5.jpeg'
 import indianBlack from '../assets/marbles/indian-black-marble[1].jpg'
 import katniBeige from '../assets/marbles/katni-beige-marble-500x500[1].jpg'
 import merryGold from '../assets/marbles/merry-gold-500x500[1].jpg'
@@ -92,7 +96,7 @@ export const allProducts = [
   { id: 5, name: "Cloud Grey", image: cloudGrey, category: "Marble", description: "Sophisticated grey marble with cloud-like patterns and modern appeal." },
   { id: 6, name: "Fantasy Brown", image: fantasyBrown, category: "Marble", description: "Rich brown marble with unique patterns and warm golden undertones." },
   { id: 7, name: "Iconic Black", image: iconicBlack, category: "Marble", description: "Luxurious black marble with distinctive veining, perfect for modern interiors." },
-  { id: 8, name: "Iconic Gold", image: iconicGold, category: "Marble", description: "Premium gold marble with luxurious appearance and elegant finish." },
+  { id: 8, name: "Iconic Gold", image: iconicGold1, images: [iconicGold1, iconicGold2, iconicGold3, iconicGold4, iconicGold5], category: "Marble", description: "Premium gold marble with luxurious appearance and elegant finish." },
   { id: 9, name: "Indian Black", image: indianBlack, category: "Marble", description: "Classic black marble with consistent color and premium quality." },
   { id: 10, name: "Katni Beige", image: katniBeige, category: "Marble", description: "Neutral beige marble perfect for versatile design applications." },
   { id: 11, name: "Merry Gold", image: merryGold, category: "Marble", description: "Warm gold marble with natural patterns and rich coloring." },
