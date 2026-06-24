@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 import { 
   FaCogs, 
@@ -27,9 +28,9 @@ import grindingImg from "../../assets/tiles-Grinding.webp";
 import polishing  from "../../assets/Polishing.jpg"; 
 
 // 4 Premium Tiles (tumhari nayi images)
-import IconicGold from "../../assets/marbles/iconic-gold-marble-slabs-985059-1-B.jpeg.jpg";
+import IconicGold from "../../assets/marbles/Iconic Gold-1.jpeg";
 import IndianSupplier from "../../assets/marbles/Indian-Marble-Supplier[1].jpg";
-import IstockMarble from "../../assets/marbles/istockphoto-1134258949-612x612.jpg";
+import IstockMarble from "../../assets/marbles/Afyon-White-8_(1)[1].jpg";
 import KatniBeige from "../../assets/marbles/katni-beige-marble-500x500[1].jpg";
 
 const features = [
@@ -47,10 +48,10 @@ const processSteps = [
 ];
 
 const tileCategories = [
-  { id: 21, name: "Iconic Gold", image: IconicGold },
-  { id: 22, name: "Indian Beige", image: IndianSupplier },
-  { id: 23, name: "Premium White", image: IstockMarble },
-  { id: 24, name: "Katni Beige", image: KatniBeige },
+  { id: 8, name: "Iconic Gold", image: IconicGold },
+  { id: 22, name: "Indian Marble Supplier", image: IndianSupplier },
+  { id: 21, name: "Afyon White", image: IstockMarble },
+  { id: 10, name: "Katni Beige", image: KatniBeige },
 ];
 
 const applications = [
@@ -61,6 +62,7 @@ const applications = [
 ];
 
 const TilesProduction = () => {
+  const navigate = useNavigate();
   const [activeCard, setActiveCard] = useState(1);
 
   return (
@@ -228,6 +230,7 @@ const TilesProduction = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: i * 0.15 }}
               whileHover={{ y: -16 }}
+              onClick={() => navigate(`/product/${tile.id}`)}
               className="group relative overflow-hidden rounded-3xl shadow-2xl cursor-pointer bg-white"
             >
               <div className="aspect-square overflow-hidden">
