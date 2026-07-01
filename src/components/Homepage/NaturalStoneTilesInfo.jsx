@@ -1,6 +1,6 @@
 import React from "react";
 import rGreen from "../../assets/marbles/Afyon-White-8_(1)[1].jpg";
-import SPIDERGreen from "../../assets/marbles/istockphoto-1134258949-612x612.jpg";
+import iconicGold3 from "../../assets/marbles/1000317226.jpg";
 
 const NaturalStoneTilesInfo = () => {
   return (
@@ -35,8 +35,8 @@ const NaturalStoneTilesInfo = () => {
               className="absolute top-0 left-0 w-3/4 h-3/4 object-cover rounded-xl shadow-lg transform -translate-y-4 translate-x-4"
             />
             <img
-              src={SPIDERGreen}
-              alt="Spider Green Marble"
+              src={iconicGold3}
+              alt="Iconic Gold Marble"
               className="absolute bottom-0 right-0 w-3/4 h-3/4 object-cover rounded-xl shadow-lg transform translate-x-4 -translate-y-4"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent rounded-xl"></div>

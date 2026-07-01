@@ -1,7 +1,7 @@
 import React from 'react';
 import { FaGlobe, FaShippingFast, FaCertificate, FaHandshake } from 'react-icons/fa';
 import { useNavigate } from 'react-router-dom';
-import artboard from '../../../dist/assets/Artboard.jpg';
+import artboard from '../../assets/Artboard.jpg';
 
 const Exporters = () => {
   const navigate = useNavigate();
