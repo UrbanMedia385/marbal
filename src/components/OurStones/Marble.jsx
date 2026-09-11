@@ -2,59 +2,9 @@ import React, { useState, useEffect } from 'react'
 import { FiChevronLeft, FiChevronRight } from 'react-icons/fi'
 import { useNavigate, useSearchParams } from 'react-router-dom'
 
-// Import marble images
-import agariaWhite from '../../assets/marbles/Agaria-White-Marble[1].jpg'
-import aravaliGreen from '../../assets/marbles/Aravali-Green[1].jpg'
-import bidasarBrown from '../../assets/marbles/bidasar brown marble.jpg'
-import bidasarGreen from '../../assets/marbles/bidasar-green-500x500[1].jpg'
-import cloudGrey from '../../assets/marbles/Cloud-Grey-Marble[1].jpg'
-import fantasyBrown from '../../assets/marbles/fantasy brown marble.jpg'
-import iconicBlack from '../../assets/marbles/Iconic-black-marble-1200x1200-1[1].jpg'
-import iconicGold from '../../assets/marbles/Iconic Gold-1.jpeg'
-import indianBlack from '../../assets/marbles/indian-black-marble[1].jpg'
-import katniBeige from '../../assets/marbles/katni-beige-marble-500x500[1].jpg'
-import merryGold from '../../assets/marbles/merry-gold-500x500[1].jpg'
-import morchanaGold from '../../assets/marbles/morchana gold marble.jpg'
-import mysticGreen from '../../assets/marbles/Mystic-Green-Marble[1].jpg'
-import pinkAraveli from '../../assets/marbles/pink araveli.jpg'
-import pinkMarble from '../../assets/marbles/pink-marble[1].jpg'
-import rossoLavante from '../../assets/marbles/rosso-lavante-italian-marble[1].jpg'
-import afyonWhite from '../../assets/marbles/Afyon-White-8_(1)[1].jpg'
-import indianMarbleSupplier from '../../assets/marbles/Indian-Marble-Supplier[1].jpg'
-import millenium from '../../assets/marbles/millenium1-1[1].jpg'
-import whiteAravaliOnyx from '../../assets/marbles/white-aravali-onyx-376129184-b5kzi[1].jpg'
-import marbleImage from '../../assets/marbles/3-41-768x768[1].jpg'
-import forestGreen from '../../assets/marbles/Forestgeen.png'
-import spiderGreen from '../../assets/marbles/SPIDERGreen.png'
-import rGreenMarble from '../../assets/marbles/Rgreen.png'
-import surataGreen from '../../assets/marbles/SuttreGeern.png'
-const marbleProducts = [
-  { id: 1, name: "Agaria White", image: agariaWhite },
-  { id: 2, name: "Aravali Green", image: aravaliGreen },
-  { id: 3, name: "Bidasar Brown", image: bidasarBrown },
-  { id: 4, name: "Bidasar Green", image: bidasarGreen },
-  { id: 5, name: "Cloud Grey", image: cloudGrey },
-  { id: 6, name: "Fantasy Brown", image: fantasyBrown },
-  { id: 7, name: "Iconic Black", image: iconicBlack },
-  { id: 8, name: "Iconic Gold", image: iconicGold },
-  { id: 9, name: "Indian Black", image: indianBlack },
-  { id: 10, name: "Katni Beige", image: katniBeige },
-  { id: 11, name: "Merry Gold", image: merryGold },
-  { id: 12, name: "Morchana Gold", image: morchanaGold },
-  { id: 13, name: "Mystic Green", image: mysticGreen },
-  { id: 14, name: "Pink Araveli", image: pinkAraveli },
-  { id: 15, name: "Pink Marble", image: pinkMarble },
-  { id: 16, name: "Rosso Lavante", image: rossoLavante },
-  { id: 17, name: "Surata Green", image: surataGreen, description:"" },
-  { id: 18, name: "Forest Green", image: forestGreen },
-  { id: 19, name: "Spider Green", image: spiderGreen },
-  { id: 20, name: "R Green-Marble", image: rGreenMarble },
-  { id: 21, name: "Afyon White", image: afyonWhite },
-  { id: 22, name: "Indian Marble Supplier", image: indianMarbleSupplier },
-  { id: 23, name: "Millenium", image: millenium },
-  { id: 24, name: "White Aravali Onyx", image: whiteAravaliOnyx },
-  { id: 25, name: "Premium Marble", image: marbleImage }
-];
+import { allProducts } from '../../data/products'
+
+const marbleProducts = allProducts.filter(p => p.category === "Marble");
 
 export default function Marble() {
   const [currentSlide, setCurrentSlide] = useState(0)

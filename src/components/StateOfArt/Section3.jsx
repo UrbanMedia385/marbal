@@ -11,6 +11,7 @@ import {
 
 const Section3 = () => {
   const [activeTab, setActiveTab] = useState("cutting");
+  const [activeVideo, setActiveVideo] = useState(null);
 
   // Technology data
   const technologyCategories = [
@@ -245,7 +246,7 @@ const Section3 = () => {
                     {/* Play Button */}
                     <button
                       onClick={() => setActiveVideo(tech.video)}
-                      className="inline-flex items-center px-3 sm:px-4 md:px-5 py-2 sm:py-2.5 bg-[#0E5543] text-[#0E5543] rounded-lg hover:bg-[#0E5543]/90 transition-all duration-300 group/btn font-medium text-xs sm:text-sm md:text-base"
+                      className="inline-flex items-center px-3 sm:px-4 md:px-5 py-2 sm:py-2.5 bg-[#0E5543] text-[#F2E1C5] rounded-lg hover:bg-[#0E5543]/90 transition-all duration-300 group/btn font-medium text-xs sm:text-sm md:text-base shadow-md"
                       style={{ fontFamily: 'Arial, sans-serif', fontWeight: '300', letterSpacing: '0.1em' }}
                     >
                       <FiPlay className="mr-2 transition-transform group-hover/btn:translate-x-1" />
@@ -283,6 +284,35 @@ const Section3 = () => {
           <div className="absolute right-0 bottom-1/4 w-48 h-48 bg-[#F2E1C5]/20 rounded-full blur-3xl"></div>
         </div>
       </section>
+
+      {/* Video Modal */}
+      {activeVideo && (
+        <div
+          className="fixed inset-0 bg-black/95 z-50 flex items-center justify-center p-4"
+          onClick={() => setActiveVideo(null)}
+        >
+          <div
+            className="relative max-w-5xl w-full aspect-video rounded-2xl overflow-hidden shadow-2xl bg-black"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <div className="absolute top-4 right-4 z-20">
+              <button
+                onClick={() => setActiveVideo(null)}
+                className="text-[#F2E1C5] hover:text-white px-4 py-2 rounded-full bg-black/50 border border-[#F2E1C5]/20 text-sm"
+              >
+                Close ✕
+              </button>
+            </div>
+            <iframe
+              src={activeVideo}
+              className="w-full h-full"
+              frameBorder="0"
+              allow="autoplay; fullscreen; picture-in-picture"
+              allowFullScreen
+            ></iframe>
+          </div>
+        </div>
+      )}
     </>
   );
 };

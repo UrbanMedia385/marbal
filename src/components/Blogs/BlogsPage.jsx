@@ -2,9 +2,53 @@ import React, { useEffect, useState } from 'react'
 import { FaSearch, FaCalendar, FaUser, FaArrowRight, FaShare, FaFacebook, FaTwitter, FaLinkedin, FaInstagram, FaTags, FaClock } from 'react-icons/fa'
 import Apihelper from '../../services/Apihelper'
 
+const fallbackBlogs = [
+  {
+    _id: "fb-1",
+    title: "The Timeless Elegance of Indian Green Marble: A Complete Architectural Guide",
+    description: "Discover why Indian Green Marble (Verde Guatemala / Udaipur Green) remains one of the world's most sought-after natural stones for luxury villas, spas, and contemporary architecture.",
+    category: "Green Marble Guide",
+    image: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
+    author: "Rishabh Green Editorial",
+    createdAt: "2025-01-15T10:00:00Z",
+    tags: ["Indian green marble", "Luxury", "Interior"]
+  },
+  {
+    _id: "fb-2",
+    title: "How to Care for & Polish Natural Marble Flooring for Lasting Brilliance",
+    description: "Essential tips and maintenance techniques from natural stone experts to preserve the polish, prevent etching, and protect your natural marble surfaces forever.",
+    category: "Maintenance",
+    image: "https://images.unsplash.com/photo-1600565193348-f74bd3c7ccdf?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+    author: "Stone Care Specialist",
+    createdAt: "2025-02-02T10:00:00Z",
+    tags: ["Maintenance", "Quality", "Natural Stone"]
+  },
+  {
+    _id: "fb-3",
+    title: "Granite vs Marble vs Sandstone: Finding the Perfect Stone for Your Project",
+    description: "Compare durability, porosity, aesthetic appeal, and cost across granites, sandstones, and marbles to make the best decision for your interior and exterior spaces.",
+    category: "Marble Selection",
+    image: "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+    author: "Architectural Digest Team",
+    createdAt: "2025-02-18T10:00:00Z",
+    tags: ["Design", "Marble", "Trending"]
+  },
+  {
+    _id: "fb-4",
+    title: "Modern Minimalist Design: The Resurgence of Emerald & Forest Green Accents",
+    description: "Explore how top international designers are incorporating rich green natural stone feature walls and countertops in modern luxury developments.",
+    category: "Design Ideas",
+    image: "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+    author: "Interior Design Studio",
+    createdAt: "2025-03-01T10:00:00Z",
+    tags: ["Interior", "Modern", "Elegance"]
+  }
+];
+
 const BlogsPage = () => {
   const [searchTerm, setSearchTerm] = useState('')
   const [Bloge, setBloge] = useState([])
+  const [loading, setLoading] = useState(true)
 
   const categories = [
     { name: "Green Marble Guide", count: 1 },
@@ -23,15 +67,22 @@ const BlogsPage = () => {
     (post.description || "").toLowerCase().includes(searchTerm.toLowerCase())
   ) : [];
 
-  const featuredPost = Bloge && Bloge.length > 0 ? Bloge[0] : null;
+  const featuredPost = filteredPosts && filteredPosts.length > 0 ? filteredPosts[0] : null;
 
   async function getAllBlogs() {
+    setLoading(true);
     try {
       const response = await Apihelper.getallblogs();
-      console.log(response.data);
-      setBloge(response?.data || []);
+      if (response?.data && Array.isArray(response.data) && response.data.length > 0) {
+        setBloge(response.data);
+      } else {
+        setBloge(fallbackBlogs);
+      }
     } catch (error) {
-      console.log(error);
+      console.warn("Backend blog API unreachable, using default blog articles:", error.message);
+      setBloge(fallbackBlogs);
+    } finally {
+      setLoading(false);
     }
   }
 
@@ -211,7 +262,9 @@ const BlogsPage = () => {
                   </div>
                 )) : (
                   <div className="col-span-2 text-center py-12">
-                    <p className="text-gray-500 text-lg">Loading blogs...</p>
+                    <p className="text-gray-500 text-lg">
+                      {loading ? "Loading blogs..." : "No articles found matching your search."}
+                    </p>
                   </div>
                 )}
               </div>

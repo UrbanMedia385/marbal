@@ -47,24 +47,26 @@ const Footer = () => {
             </p>
             <div className="flex space-x-2 sm:space-x-3">
               {[
-                { icon: <FiFacebook size={18} />, to: "/facebook" },
-                { icon: <FiTwitter size={18} />, to: "/twitter" },
-                { icon: <FiInstagram size={18} />, to: "/instagram" },
+                { icon: <FiFacebook size={18} />, href: "https://facebook.com" },
+                { icon: <FiTwitter size={18} />, href: "https://twitter.com" },
+                { icon: <FiInstagram size={18} />, href: "https://www.instagram.com/rishabhgreenmarbles?stkn=MXZjNzJjeDJyZWZpYw==" },
               ].map((item, index) => (
-                <p
+                <a
                   key={index}
-                  onClick={() => navigate(item.to)}
-                  className="p-2 sm:p-3 bg-[#0E5543] border border-[#F2E1C5]/20 rounded-lg text-[#F2E1C5] transition-all duration-300 group hover:bg-[#F2E1C5] hover:text-[#0E5543] cursor-pointer"
+                  href={item.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="p-2 sm:p-3 bg-[#0E5543] border border-[#F2E1C5]/20 rounded-lg text-[#F2E1C5] transition-all duration-300 group hover:bg-[#F2E1C5] hover:text-[#0E5543] cursor-pointer inline-flex items-center justify-center"
                 >
                   {item.icon}
-                </p>
+                </a>
               ))}
             </div>
           </div>
 
           {/* Quick Links */}
           <div className="md:col-span-2">
-            <h3 className="text-lg font-semibold mb-6 relative pb-2 after:absolute after:left-0 after:bottom-0 after:w-10 after:h-0.5 after:bg-[#F2E1C5]"style={{ fontFamily: 'Montserrat', fontWeight: '200', letterSpacing: '0.1em' }}>
+            <h3 className="text-lg font-semibold mb-6 relative pb-2 after:absolute after:left-0 after:bottom-0 after:w-10 after:h-0.5 after:bg-[#F2E1C5]" style={{ fontFamily: 'Montserrat', fontWeight: '200', letterSpacing: '0.1em' }}>
               Explore
             </h3>
             <ul className="space-y-4 mx-[-20px]"
@@ -73,9 +75,9 @@ const Footer = () => {
               {[
                 { label: "Home", to: "/" },
                 { label: "About Us", to: "/about" },
-                { label: "Products", to: "/products" },
+                { label: "Our Stones", to: "/OurStones" },
                 { label: "Gallery", to: "/gallery" },
-                { label: "Projects", to: "/projects" },
+                { label: "Production Tech", to: "/state-of-the-art" },
               ].map((item, index) => (
                 <li key={index}>
                   <p
@@ -93,15 +95,15 @@ const Footer = () => {
           {/* Products */}
           <div className="md:col-span-2">
             <h3 className="text-lg font-semibold mb-6 relative pb-2 after:absolute after:left-0 after:bottom-0 after:w-10 after:h-0.5 after:bg-[#F2E1C5]" style={{ fontFamily: 'Montserrat', fontWeight: '200', letterSpacing: '0.1em' }}>
-            Catagory 
+              Category 
             </h3>
-            <ul className="space-y-4 mx-[-20px]"            style={{ fontFamily: 'Montserrat', fontWeight: '200', letterSpacing: '0.1em' }}>
+            <ul className="space-y-4 mx-[-20px]" style={{ fontFamily: 'Montserrat', fontWeight: '200', letterSpacing: '0.1em' }}>
 
               {[
-                { label: "Green Marble  ", to: "/products/green-marble" },
-                { label: "White Marble", to: "/products/white-marble" },
-                { label: "Granite", to: "/products/granite" },
-                { label: "Sandstone", to: "/products/sandstone" }
+                { label: "Green Marble", to: "/marble" },
+                { label: "White Marble", to: "/marble" },
+                { label: "Granite", to: "/granite" },
+                { label: "Sandstone", to: "/sandstone" }
                
               ].map((item, index) => (
                 <li key={index}>
@@ -197,27 +199,27 @@ const Footer = () => {
         {/* Bottom */}
         <div className="border-t border-[#F2E1C5]/20 pt-6 sm:pt-8 pb-6 sm:pb-8 flex flex-col md:flex-row justify-between items-center gap-3 sm:gap-4">
           <p className="text-[#F2E1C5]/60 text-xs sm:text-sm flex items-center text-center md:text-left">
-            © {new Date().getFullYear()} Rishab Green Marbles. Crafted with{" "}
+            © {new Date().getFullYear()} Rishabh Green Marbles. Crafted with{" "}
             <FiHeart className="text-[#F2E1C5] mx-1" /> in India.
           </p>
           <div className="flex flex-wrap justify-center gap-4 md:gap-6">
             <p
-              onClick={() => navigate("/privacy")}
+              onClick={() => navigate("/about")}
               className="text-[#F2E1C5]/60 hover:text-[#F2E1C5] transition-colors duration-300 text-sm cursor-pointer"
             >
-              Privacy Policy
+              About Us
             </p>
             <p
-              onClick={() => navigate("/terms")}
+              onClick={() => navigate("/contact")}
               className="text-[#F2E1C5]/60 hover:text-[#F2E1C5] transition-colors duration-300 text-sm cursor-pointer"
             >
-              Terms of Service
+              Contact Us
             </p>
             <p
-              onClick={() => navigate("/shipping")}
+              onClick={() => navigate("/exporters")}
               className="text-[#F2E1C5]/60 hover:text-[#F2E1C5] transition-colors duration-300 text-sm cursor-pointer"
             >
-              Shipping Info
+              Shipping & Export
             </p>
           </div>
         </div>

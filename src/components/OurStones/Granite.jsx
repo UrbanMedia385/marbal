@@ -2,89 +2,9 @@ import React, { useState, useEffect } from 'react'
 import { useNavigate, useSearchParams } from 'react-router-dom'
 import { FiChevronLeft, FiChevronRight } from 'react-icons/fi'
 
-// Import granite images
-import absoluteBlack from '../../assets/Granites/Absolute Black  Granite Countertops and Tile.jpeg'
-import alaskaGold from '../../assets/Granites/Alaska Gold Granite Supplier in India.jpeg'
-import alaskaWhite from '../../assets/Granites/Alaska White Granite.jpeg'
-import alpineWhite from '../../assets/Granites/Alpine White.jpeg'
-import blackGalaxy from '../../assets/Granites/Black Galaxy Granite From Ongole, India.jpeg'
-import blackPearl from '../../assets/Granites/Black Pearl Granite.jpeg'
-import blackBeauty from '../../assets/Granites/Black-beauty-granite.webp'
-import brunoRed from '../../assets/Granites/bruno-red-granite-1537608397-4328307.jpg'
-import champagneGold from '../../assets/Granites/champagne-gold-granite-tile--926486-0-B.jpg'
-import chimaBlue from '../../assets/Granites/chima-blue-granite-2012014226-0ul1gqog.avif'
-import chimaPink from '../../assets/Granites/chima-pink-granite-1566713706-5053745.jpeg'
-import crystalYellow from '../../assets/Granites/Crystal yellow granite.jpeg'
-import desertBrown from '../../assets/Granites/Desert Brown Granite - Kitchen Countertop Ideas.jpeg'
-import dessertGreen from '../../assets/Granites/Dessert Green Granite.jpeg'
-import ambaWhite from '../../assets/Granites/granite_Amba-White_Ym0ggR4uINTH96XsG9DW.jpg'
-import ikonBrown from '../../assets/Granites/Ikon Brown Grantine.jpeg'
-import impalaBlack from '../../assets/Granites/Impala Black.jpeg'
-import imperialRed from '../../assets/Granites/IMPERIAL RED GRANITE.jpeg'
-import ivoryFantasy from '../../assets/Granites/IVORY FANTASY GRANITE - Ivory _ 20MM _ Polished _ Per Sq Mt.jpeg'
-import jeerawalWhite from '../../assets/Granites/jeerawal-white-granite-1000x1000.jpg'
-import jhansiRed from '../../assets/Granites/JHANSI RED GRANITE.jpeg'
-import kashmirWhite from '../../assets/Granites/Kashmir White Granite _ Marella Granite & Marble.jpeg'
-import koliwadaBlue from '../../assets/Granites/Koliwada Blue Granite.jpeg'
-import lakhaRed from '../../assets/Granites/LAKHA RED GRANITE -.jpeg'
-import magicWhite from '../../assets/Granites/magic-white-granite-slabs-tiles-p2787-1B.jpg'
-import marigold from '../../assets/Granites/marigold-granite-1512372173-3494734.jpg'
-import merryWood from '../../assets/Granites/merry-wood-granite.jpg'
-import newImperialGold from '../../assets/Granites/New Imperial Gold          Stones Picture -         Other Country         Granite         Image.jpeg'
-import pWhite from '../../assets/Granites/P WHITE GRANITE.jpeg'
-import rajasthanBlack from '../../assets/Granites/images.jpeg'
-import rosyPink from '../../assets/Granites/-1le8zqvk.avif'
-import royalCream from '../../assets/Granites/Royal Cream Granite.jpeg'
-import royalGreen from '../../assets/Granites/royal-green-granite-1510815057-3455614.jpg'
-import sapphireBlue from '../../assets/Granites/Sapphire Blue.jpeg'
-import sunriseGold from '../../assets/Granites/Sunrise Gold granite.jpeg'
-import tanBrown from '../../assets/Granites/Tanbrown granite.jpeg'
-import balaFlower from '../../assets/Granites/bala-flower-555x415.jpg'
-import copperSilk from '../../assets/Granites/Best Copper Silk Granite (Pictures & Costs) _ Material ID_ 1132 _ Marble_com.jpeg'
-import ivoryBrown from '../../assets/Granites/Best Ivory Brown Granite (Pictures & Costs) _ Material ID_ 556 _ Marble_com.jpeg'
+import { allProducts } from '../../data/products'
 
-
-const graniteProducts = [
-  { id: 22, name: "Absolute Black", image: absoluteBlack },
-  { id: 23, name: "Alaska Gold", image: alaskaGold },
-  { id: 24, name: "Alaska White", image: alaskaWhite },
-  { id: 25, name: "Alpine White", image: alpineWhite },
-  { id: 26, name: "Black Galaxy", image: blackGalaxy },
-  { id: 27, name: "Black Pearl", image: blackPearl },
-  { id: 28, name: "Black Beauty", image: blackBeauty },
-  { id: 29, name: "Bruno Red", image: brunoRed },
-  { id: 30, name: "Champagne Gold", image: champagneGold },
-  { id: 31, name: "Chima Blue", image: chimaBlue },
-  { id: 32, name: "Chima Pink", image: chimaPink },
-  { id: 33, name: "Crystal Yellow", image: crystalYellow },
-  { id: 34, name: "Desert Brown", image: desertBrown },
-  { id: 35, name: "Dessert Green", image: dessertGreen },
-  { id: 36, name: "Amba White", image: ambaWhite },
-  { id: 37, name: "Ikon Brown", image: ikonBrown },
-  { id: 38, name: "Impala Black", image: impalaBlack },
-  { id: 39, name: "Imperial Red", image: imperialRed },
-  { id: 40, name: "Ivory Fantasy", image: ivoryFantasy },
-  { id: 41, name: "Jeerawal White", image: jeerawalWhite },
-  { id: 42, name: "Jhansi Red", image: jhansiRed },
-  { id: 43, name: "Kashmir White", image: kashmirWhite },
-  { id: 44, name: "Koliwada Blue", image: koliwadaBlue },
-  { id: 45, name: "Lakha Red", image: lakhaRed },
-  { id: 46, name: "Magic White", image: magicWhite },
-  { id: 47, name: "Marigold", image: marigold },
-  { id: 48, name: "Merry Wood", image: merryWood },
-  { id: 49, name: "New Imperial Gold", image: newImperialGold },
-  { id: 50, name: "P White", image: pWhite },
-  { id: 51, name: "Rajasthan Black", image: rajasthanBlack },
-  { id: 52, name: "Rosy Pink", image: rosyPink },
-  { id: 53, name: "Royal Cream", image: royalCream },
-  { id: 54, name: "Royal Green", image: royalGreen },
-  { id: 55, name: "Sapphire Blue", image: sapphireBlue },
-  { id: 56, name: "Sunrise Gold", image: sunriseGold },
-  { id: 57, name: "Tan Brown", image: tanBrown },
-  { id: 58, name: "Bala Flower", image: balaFlower },
-  { id: 59, name: "Copper Silk", image: copperSilk },
-  { id: 60, name: "Ivory Brown", image: ivoryBrown },
-];
+const graniteProducts = allProducts.filter(p => p.category === "Granite");
 
 export default function Granite() {
   const navigate = useNavigate()

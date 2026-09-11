@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from 'react'
+import { useNavigate } from 'react-router-dom'
 import { useKeenSlider } from "keen-slider/react"
 import "keen-slider/keen-slider.min.css"
 import { FaExpand, FaTimes, FaChevronLeft, FaChevronRight, FaCar, FaTools, FaHeadset, FaArrowRight } from "react-icons/fa"
 import HeaderContent from '../Helper/HeaderContent'
 
 export default function ProductCollection() {
+  const navigate = useNavigate()
   const [currentSlide, setCurrentSlide] = useState(0)
   const [loaded, setLoaded] = useState(false)
   const [selectedProduct, setSelectedProduct] = useState(null)
@@ -152,7 +154,7 @@ export default function ProductCollection() {
   }
 
   const handleExploreServices = () => {
-    console.log("Explore Services clicked")
+    navigate('/services')
   }
 
   return (

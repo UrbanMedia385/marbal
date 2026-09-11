@@ -1,9 +1,10 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { motion } from 'framer-motion';
 import { FiPlay } from 'react-icons/fi';
 
 
 const Section1 = () => {
+    const [activeVideo, setActiveVideo] = useState(null);
 return (
     <>
         <section className="relative py-10 bg-gradient-to-br from-[#0E5543] via-[#1a6b52] to-[#0E5543] overflow-hidden"
@@ -116,7 +117,7 @@ return (
                             <motion.button
                                 whileHover={{ scale: 1.1 }}
                                 whileTap={{ scale: 0.9 }}
-                                onClick={() => setActiveVideo('intro')}
+                                onClick={() => setActiveVideo('https://player.vimeo.com/video/370756669')}
                                 className="absolute inset-0 flex items-center justify-center group"
                             >
                                 <div className="relative">
@@ -166,6 +167,35 @@ return (
                 ></motion.div>
             </div>
         </section>
+
+        {/* Video Modal */}
+        {activeVideo && (
+            <div
+                className="fixed inset-0 bg-black/95 z-50 flex items-center justify-center p-4"
+                onClick={() => setActiveVideo(null)}
+            >
+                <div
+                    className="relative max-w-5xl w-full aspect-video rounded-2xl overflow-hidden shadow-2xl bg-black"
+                    onClick={(e) => e.stopPropagation()}
+                >
+                    <div className="absolute top-4 right-4 z-20">
+                        <button
+                            onClick={() => setActiveVideo(null)}
+                            className="text-[#F2E1C5] hover:text-white px-4 py-2 rounded-full bg-black/50 border border-[#F2E1C5]/20 text-sm"
+                        >
+                            Close ✕
+                        </button>
+                    </div>
+                    <iframe
+                        src={activeVideo}
+                        className="w-full h-full"
+                        frameBorder="0"
+                        allow="autoplay; fullscreen; picture-in-picture"
+                        allowFullScreen
+                    ></iframe>
+                </div>
+            </div>
+        )}
     </>
 )
 }

@@ -2,32 +2,9 @@ import React, { useState, useEffect } from "react";
 import { useNavigate, useSearchParams } from "react-router-dom";
 import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
 
-// Import sandstone images
-import beigeSandstone from "../../assets/Sandstone/Beige Sandstone.jpg";
-import chocolateSandstone from "../../assets/Sandstone/Chocolate Sandstone.jpg";
-import greySandstone from "../../assets/Sandstone/Grey Sandstone.jpg";
-import gwaliorWhiteMint from "../../assets/Sandstone/gwalior-mint-sandstone-500x500.webp";
-import jaisalmerYellow from "../../assets/Sandstone/jaisalmer yellow sandstone.jpg";
-import jodhpurPink from "../../assets/Sandstone/JODHPUR PINK Snadstone.jpg";
-import kotaBlue from "../../assets/Sandstone/kota blue.jpg";
-import merryGoldSandstone from "../../assets/Sandstone/merry-gold-500x500.webp";
-import rainbowSandstone from "../../assets/Sandstone/rainbow-1.jpg";
-import redSandstone from "../../assets/Sandstone/Red Sandstone.jpg";
-import teakwoodSandstone from "../../assets/Sandstone/Teakwood-Sandstone.jpg";
+import { allProducts } from "../../data/products";
 
-const sandstoneProducts = [
-  { id: 61, name: "Beige Sandstone", image: beigeSandstone },
-  { id: 62, name: "Chocolate Sandstone", image: chocolateSandstone },
-  { id: 63, name: "Grey Sandstone", image: greySandstone },
-  { id: 64, name: "Gwalior White Mint", image: gwaliorWhiteMint },
-  { id: 65, name: "Jaisalmer Yellow", image: jaisalmerYellow },
-  { id: 66, name: "Jodhpur Pink", image: jodhpurPink },
-  { id: 67, name: "Kota Blue", image: kotaBlue },
-  { id: 68, name: "Merry Gold Sandstone", image: merryGoldSandstone },
-  { id: 69, name: "Rainbow Sandstone", image: rainbowSandstone },
-  { id: 70, name: "Red Sandstone", image: redSandstone },
-  { id: 71, name: "Teakwood Sandstone", image: teakwoodSandstone },
-];
+const sandstoneProducts = allProducts.filter(p => p.category === "Sandstone");
 
 export default function Sandstone() {
   const navigate = useNavigate();

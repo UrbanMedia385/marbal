@@ -178,10 +178,16 @@ const ContactUs = () => {
             >
               <h3 className="font-['Inter'] font-semibold text-[#0E5543] mb-4">Follow Our Journey</h3>
               <div className="flex gap-3">
-                {[FaInstagram, FaFacebookF, FaLinkedinIn].map((Icon, index) => (
+                {[
+                  { Icon: FaInstagram, href: "https://www.instagram.com/rishabhgreenmarbles?stkn=MXZjNzJjeDJyZWZpYw==" },
+                  { Icon: FaFacebookF, href: "https://facebook.com" },
+                  { Icon: FaLinkedinIn, href: "https://linkedin.com" }
+                ].map(({ Icon, href }, index) => (
                   <motion.a
                     key={index}
-                    href="#"
+                    href={href}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     whileHover={{ scale: 1.1, y: -2 }}
                     whileTap={{ scale: 0.95 }}
                     className="w-10 h-10 bg-gradient-to-r from-[#0E5543] to-[#1A7A62] rounded-lg flex items-center justify-center text-[#F2E1C5] hover:shadow-lg transition-all duration-300"

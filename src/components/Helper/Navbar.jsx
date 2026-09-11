@@ -1,14 +1,31 @@
 // components/Navbar.js
 import React, { useState, useEffect } from "react";
 import { FiMenu, FiSearch, FiX, FiShoppingCart } from "react-icons/fi";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import logo from "../../../public/logo.png"; // Adjust the path as necessary
+import { allProducts } from "../../data/products";
 
 const Navbar = () => {
+  const navigate = useNavigate();
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [activeItem, setActiveItem] = useState("home");
   const [mobileDropdowns, setMobileDropdowns] = useState({});
+  const [searchTerm, setSearchTerm] = useState("");
+
+  const handleSearch = (e) => {
+    e.preventDefault();
+    if (!searchTerm.trim()) return;
+    const query = searchTerm.trim().toLowerCase();
+    const matched = allProducts.find((p) => p.name.toLowerCase().includes(query));
+    if (matched) {
+      navigate(`/product/${matched.id}`);
+    } else {
+      navigate(`/OurStones`);
+    }
+    setSearchTerm("");
+    setIsOpen(false);
+  };
 
   useEffect(() => {
     const handleScroll = () => {
@@ -48,7 +65,7 @@ const Navbar = () => {
         { name: "Marble Export - Europe", path: "/exporters/europe" },
       ]
     },
-    { name: "Blogs", path: "/Blogs" },
+    { name: "Blogs", path: "/blogs" },
     { name: "Contact Us", path: "/contact" },
   ];
 
@@ -142,18 +159,19 @@ const Navbar = () => {
 
             {/* Search */}
             <div className="flex items-center ml-3 xl:ml-4 pl-3 xl:pl-4 border-l border-gray-700">
-              <div className="relative group">
+              <form onSubmit={handleSearch} className="relative group">
                 <div className="absolute inset-0 bg-gradient-to-r from-amber-500/20 to-orange-500/20 rounded-full blur opacity-0 group-hover:opacity-100 transition-all duration-500"></div>
                 <input
                   type="text"
-                  placeholder="Search marble..."
+                  placeholder="Search stones..."
+                  value={searchTerm}
+                  onChange={(e) => setSearchTerm(e.target.value)}
                   className="relative px-3 py-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full text-sm text-white placeholder-white/60 focus:outline-none focus:ring-2 focus:ring-[#1A7A62]/50 focus:border-[#1A7A62]/50 focus:bg-[#1A7A62]/20 transition-all duration-300 w-28 xl:w-40 2xl:w-48 hover:bg-[#1A7A62]/15"
                 />
-                <FiSearch
-                  className="absolute right-3 top-1/2 transform -translate-y-1/2 text-white/70 group-hover:text-amber-300 transition-colors duration-300"
-                  size={14}
-                />
-              </div>
+                <button type="submit" className="absolute right-3 top-1/2 transform -translate-y-1/2 text-white/70 hover:text-amber-300 transition-colors duration-300">
+                  <FiSearch size={14} />
+                </button>
+              </form>
             </div>
           </div>
 
@@ -162,9 +180,9 @@ const Navbar = () => {
             <button
               onClick={() => setIsOpen(!isOpen)}
               style={{backgroundColor:"black"}}
-              className="p-2 sm:p-2.5   transition-all duration-300 "
+              className="p-2 sm:p-2.5 transition-all duration-300"
             >
-              {isOpen ? <FiX size={18} /> : <FiMenu className="text-white" size={18} />}
+              {isOpen ? <FiX className="text-white" size={18} /> : <FiMenu className="text-white" size={18} />}
             </button>
           </div>
         </div>

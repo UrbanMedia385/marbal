@@ -9,13 +9,6 @@ import {
   FiDownload,
 } from "react-icons/fi";
 
-// Import sample images (you can replace with actual product images)
-
-import cloudGrey from "../../assets/marbles/Cloud-Grey-Marble[1].jpg";
-import fantasyBrown from "../../assets/marbles/fantasy brown marble.jpg";
-import iconicBlack from "../../assets/marbles/Iconic-black-marble-1200x1200-1[1].jpg";
-import mysticGreen from "../../assets/marbles/Mystic-Green-Marble[1].jpg";
-import pinkMarble from "../../assets/marbles/pink-marble[1].jpg";
 import { allProducts } from "../../data/products";
 
 const ProductDetail = () => {
@@ -30,9 +23,20 @@ const ProductDetail = () => {
   // Get current product and related products
   const currentProduct =
     allProducts.find((p) => p.id === parseInt(id)) || allProducts[0];
-  const relatedProducts = allProducts
-    .filter((p) => p.id !== parseInt(id))
-    .slice(0, 3);
+  const sameCategoryProducts = allProducts.filter(
+    (p) => p.category === currentProduct.category && p.id !== currentProduct.id
+  );
+  const relatedProducts =
+    sameCategoryProducts.length >= 3
+      ? sameCategoryProducts.slice(0, 3)
+      : [
+          ...sameCategoryProducts,
+          ...allProducts.filter(
+            (p) =>
+              p.id !== currentProduct.id &&
+              !sameCategoryProducts.some((sc) => sc.id === p.id)
+          ),
+        ].slice(0, 3);
 
   // Reset states when product changes
   useEffect(() => {
@@ -65,6 +69,7 @@ const ProductDetail = () => {
 
     return (
       descriptions[name] ||
+      currentProduct.description ||
       "Premium natural stone with exceptional beauty and durability."
     );
   };
@@ -95,21 +100,22 @@ const ProductDetail = () => {
 
     return (
       namedescriptions[name] ||
+      currentProduct.description ||
       "Premium natural stone with exceptional beauty and durability."
     );
   };
 
-   const getProductSpecs = (name) => {
+   const getProductSpecs = (name, category = "Marble") => {
     const baseSpecs = {
-      "Stone Type": "Natural Marble",
+      "Stone Type": `Natural ${category || "Stone"}`,
       Origin: "Rajasthan, India",
       Finish: "Polished, Honed, Brushed",
       Thickness: "15mm, 18mm, 20mm, 30mm",
       Size: "Custom sizes available",
-      Density: "2.7 g/cm³",
+      Density: category === "Granite" ? "2.65 - 2.80 g/cm³" : "2.7 g/cm³",
       "Water Absorption": "< 0.5%",
-      "Compressive Strength": "120 MPa",
-      "Flexural Strength": "15 MPa",
+      "Compressive Strength": category === "Granite" ? "180 - 250 MPa" : "120 MPa",
+      "Flexural Strength": category === "Granite" ? "18 - 25 MPa" : "15 MPa",
     };
 
     const colorMap = {
@@ -134,15 +140,13 @@ const product = {
     category: currentProduct.category,
     description: getProductDescription(currentProduct.name),
     namedescriptions: getProductnameDescription(currentProduct.name),
-    images: currentProduct.images || [
-      currentProduct.image,
-      cloudGrey,
-      fantasyBrown,
-      iconicBlack,
-      mysticGreen,
-      pinkMarble,
-    ],
-    specifications: getProductSpecs(currentProduct.name),
+    images:
+      currentProduct.images && currentProduct.images.length > 0
+        ? currentProduct.images
+        : currentProduct.image
+        ? [currentProduct.image]
+        : [],
+    specifications: getProductSpecs(currentProduct.name, currentProduct.category),
     applications: [
       "Kitchen Countertops",
       "Bathroom Vanities",
@@ -187,10 +191,13 @@ const product = {
             </button>
             <span>/</span>
             <button
-              onClick={() => navigate("/marble")}
-              className="hover:text-[#0E5543] whitespace-nowrap"
+              onClick={() => {
+                const catRoute = product.category ? `/${product.category.toLowerCase()}` : "/marble";
+                navigate(catRoute);
+              }}
+              className="hover:text-[#0E5543] whitespace-nowrap capitalize"
             >
-              Marble
+              {product.category || "Marble"}
             </button>
             <span>/</span>
             <span className="text-[#0E5543] font-medium truncate">
