@@ -47,7 +47,7 @@ const Footer = () => {
             </p>
             <div className="flex space-x-2 sm:space-x-3">
               {[
-                { icon: <FiFacebook size={18} />, href: "https://facebook.com" },
+                { icon: <FiFacebook size={18} />, href: "https://www.facebook.com/profile.php?id=61578635134712" },
                 { icon: <FiTwitter size={18} />, href: "https://twitter.com" },
                 { icon: <FiInstagram size={18} />, href: "https://www.instagram.com/rishabhgreenmarbles?stkn=MXZjNzJjeDJyZWZpYw==" },
               ].map((item, index) => (

@@ -180,7 +180,7 @@ const ContactUs = () => {
               <div className="flex gap-3">
                 {[
                   { Icon: FaInstagram, href: "https://www.instagram.com/rishabhgreenmarbles?stkn=MXZjNzJjeDJyZWZpYw==" },
-                  { Icon: FaFacebookF, href: "https://facebook.com" },
+                  { Icon: FaFacebookF, href: "https://www.facebook.com/profile.php?id=61578635134712" },
                   { Icon: FaLinkedinIn, href: "https://linkedin.com" }
                 ].map(({ Icon, href }, index) => (
                   <motion.a
